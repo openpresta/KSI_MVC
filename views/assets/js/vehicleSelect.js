@@ -2,10 +2,10 @@
 
 var $selects = $('.selectizeSelects').selectize({
 	          create: false,
-	          valueField: 'value',
-			  labelField: 'value',
-			  searchField: 'value',
-			  sortField: 'value'
+	          valueField: 'make',
+			  labelField: 'make',
+			  searchField: 'make',
+			  sortField: 'make'
 });
 
 console.log($selects);
@@ -67,25 +67,28 @@ function getData(select) {
 		            type: 'GET',
 		            dataType: 'text',
 		            data: {
-			            make: 'Audi',
-			            model: 'A1',
-			            generation: 'Génération'
+			            make: 'Marque',
+			            model: 'Modèle',
+			            generation: 'Génération',
+			            description: 'Motorisation'
 		            },
 		            error: function() {
 			            console.log("erreur");
 		            },
 		            success: function() {
-			            console.log("done");
+			            console.log("success, let's update data");
 			            setData(select, refreshedList);
+			            console.log("opération lancée");
 		            }
 	});
 	
 }
 
 function setData(select, refreshedList) {
-	
+	console.log(JSON.parse(refreshedList.responseText));
+	console.log("données mises à jour");
 	select.clearOptions();
-	select.addOption(eval(refreshedList.responseText));
+	select.addOption(JSON.parse(refreshedList.responseText));
 	
 }
 
