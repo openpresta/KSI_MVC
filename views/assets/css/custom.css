@@ -1,0 +1,86 @@
+#features div.unslider nav ol,
+#features div.unslider nav ul,
+#features div.unslider nav li {
+	list-style: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: none;
+}
+
+ul, menu, dir {
+	padding-left: 0px;
+}
+
+.ct-iconBox.ct-iconBox--type1 img.grayscale {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.ct-iconBox.ct-iconBox--type1 img.grayscale:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.specsBoitier {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	font-size: medium;
+	width: 80%;
+}
+
+.specsBoitier tr td {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: gray solid 0.5px;
+	padding-right: 40px;
+	padding-left: 40px;
+	width: 50%;
+}
+
+.specsBoitier tr:last-child td {
+	border-bottom: none;
+}
+
+.specsBoitier tr td:first-child {
+	text-align: right;
+	border-right: gray solid 0.5px;
+}
+
+.specsBoitier tr td:last-child {
+	text-align: left;
+	font-weight: bold;
+}
+
+.movingBoxIndicator {
+	-webkit-transition: padding-left 1.5s ease-in-out 0s, padding-right 1.5s ease-in-out 0s;
+	transition: padding-left 1.5s ease-in-out 0s, padding-right 1.5s ease-in-out 0s;
+}
+
+.movingBoxIndicator.left {
+	padding-right: 75%;
+	padding-left: 0%;
+}
+
+.movingBoxIndicator.center {
+	padding-right: 10%;
+	padding-left: 0%;
+}
+
+.movingBoxIndicator.right {
+	padding-right: 0%;
+	padding-left: 60%;
+}
+
+.ct-iconBox.ct-iconBox--type1.selected .ct-iconBox-icon {
+  background-color: #00bcdf;
+  color:white;
+}
+
+
+.form-group .ct-product-title .description .selectize-control .selectizeSelects {
+	width: 70%;
+}
