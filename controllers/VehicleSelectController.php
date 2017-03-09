@@ -27,28 +27,29 @@ class VehicleSelectController
                         
                     } else {
                         
-                        $output = getDescriptions($_GET['make'], $_GET['model'], $_GET['generation']);
+                        $output = Db::getInstance()->getDescriptions($_GET['make'], $_GET['model'], $_GET['generation']);
                         
                     }
                     
                 } else {
                     
-                    $output = getGenerations($_GET['make'], $_GET['model']);
-                    
+                    $output = Db::getInstance()->getGenerations($_GET['make'], $_GET['model']);
                 }  
                 
             } else {
                 
-                $output = getModels($_GET['make']);
-                
+                $output = Db::getInstance()->getModels($_GET['make']);
             }
             
         } else {
             
-            $output = getMakes();
-            
+            $output = Db::getInstance()->getMakes();
         }
         
+        $data = json_encode((array)$output);
+        echo $data;
+        
+        /*
         $jsobject = "";
 		
 		$jsobject .= "[";
@@ -62,6 +63,7 @@ class VehicleSelectController
 		$jsobject .= "]";
 		
 		echo $jsobject;
+		*/
 		
     }
     
