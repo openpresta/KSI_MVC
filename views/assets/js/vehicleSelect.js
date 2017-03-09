@@ -12,16 +12,11 @@ console.log($selects);
    		
 // DEFINES REFERENCES FOR EACH SELECT //
 		
-makeSelectTop = $selects[0].selectize;
-modelSelectTop = $selects[1].selectize;
-generationSelectTop = $selects[2].selectize;
-descriptionSelectTop = $selects[3].selectize;
-
-makeSelectBottom = $selects[4].selectize;
-modelSelectBottom = $selects[5].selectize;
-generationSelectBottom = $selects[6].selectize;
-descriptionSelectBottom = $selects[7].selectize;
-
+$.each($selects, function( index, value ) {
+  if ($selects[index].attr('id') === 'makeSelect') {
+	  console.log("make");
+  }
+});
 
 // LISTENERS
 
