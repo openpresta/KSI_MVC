@@ -10,60 +10,56 @@ class VehicleSelectController
     
     public function run()
     {
-     
-        require_once(PATH_MODELS . 'Db.php');
-        
-        if ($_GET['make']!="Marque") {
-            // Si la marque a déjà été spécifiée, sinon getMakes()
-            
-            if ($_GET['model']!="Modèle") {
-                // Si la modèle (+marque) ont été spécifiées, sinon getModels()
-                
-                if ($_GET['generation']!="Génération") {
-                    // Si la génération (+modèle, + marque) ont été spécifiés, sinon getGenerations()
-                    
-                    if ($_GET['description']!="Motorisation") {
-                        // Si la motorisation a été séléctionnée, alors redirection page sinon getDescriptions() 
-                        
-                    } else {
-                        
-                        $output = Db::getInstance()->getDescriptions($_GET['make'], $_GET['model'], $_GET['generation']);
-                        
-                    }
-                    
-                } else {
-                    
-                    $output = Db::getInstance()->getGenerations($_GET['make'], $_GET['model']);
-                }  
-                
-            } else {
-                
-                $output = Db::getInstance()->getModels($_GET['make']);
-            }
-            
-        } else {
-            
-            $output = Db::getInstance()->getMakes();
-        }
-        
-        $data = json_encode((array)$output);
-        echo $data;
-        
-        /*
-        $jsobject = "";
+    
+    	require_once(PATH_MODELS . "Db.php");
+    	
+    	$make = $_GET['make'];
+    	$model = $_GET['model'];
+    	$generation = $_GET['generation'];
+    	
+    	$return = array();
 		
-		$jsobject .= "[";
-
-        foreach ($output as $key => $value) {
-	        $jsobject .= '{value:"' . $value[0] . '"},';
+		if ($make == "null" & $model == "null" & $generation == "null") {
+			
+			// Tout est "null", on doit retourner la liste des marques
+			$stdObj = Db::getInstance()->getMakes();
+			$arrayFromStd = array();
+			
+			foreach ($stdObj as $value) 
+				$arrayFromStd[] = json_encode($value->make);
+			
+			$return[] = json_encode($arrayFromStd);
+			$return[] = array("value" => "Modèles");
+			$return[] = array("value" => "Génération");
+			$return[] = array("value" => "Motorisations");
+			
 		}
 		
-		$jsobject=rtrim($jsobject,", ");
+		if ($make != "null" & $model == "null" & $generation == "null") {
+			
+			// La marque est séléctionnée, on doit retourner la liste des marques et les modèles
+			
+			
+		}
 		
-		$jsobject .= "]";
+		if ($make != "null" & $model != "null" & $generation == "null") {
+			
+			// La marque et le modèle sont sélectionnés, on retourne les marques, modèles, générations disponibles			
+			
+		}
+     
+		if ($make != "null" & $model != "null" & $generation != "null") {
+			
+			// Tout est sélectionné, on retourne toutes les options + spécifique motorisations
+			
+			
+		}
+		echo '<pre>';
+		print_r($return);
+		echo '</pre>';
 		
-		echo $jsobject;
-		*/
+		$data = json_encode((array)$return);
+        echo $data;
 		
     }
     
