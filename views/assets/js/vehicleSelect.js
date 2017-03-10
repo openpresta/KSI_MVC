@@ -2,90 +2,124 @@
 
 var $selects = $('.selectizeSelects').selectize({
 	          create: false,
-	          valueField: 'make',
-			  labelField: 'make',
-			  searchField: 'make',
-			  sortField: 'make'
+	          valueField: 'value',
+			  labelField: 'value',
+			  searchField: 'value',
+			  sortField: 'value'
 });
 
-console.log($selects);
+// OBJECTS FOR EACH CarSelector //
+
+var carSelectors = [];
+
+var makeSelects = [];
+var modelSelects = [];
+var generationSelects = [];
+var descriptionSelects = [];
+
    		
-// DEFINES REFERENCES FOR EACH SELECT //
+// Boucle sur les selects trouvés et place dans les bons tableaux //
 		
 $.each($selects, function( index, value ) {
-  if ($selects[index].attr('id') === 'makeSelect') {
-	  console.log("make");
-  }
+	if ($selects[index].id == 'makeSelect') {
+  		makeSelects.push(this['selectize']);
+	} else if ($selects[index].id == 'modelSelect') {
+		modelSelects.push(this['selectize']);
+	} else if ($selects[index].id == 'generationSelect') {
+		generationSelects.push(this['selectize']);
+	} else if ($selects[index].id == 'descriptionSelect') {
+		descriptionSelects.push(this['selectize']);
+	}
 });
 
-// LISTENERS
 
-var listenerMakeSelectTop = function() {
-	
-	console.log("Marque selectionnée, update modeleSelect");
-	getData(modelSelectTop);
-	
+// Boucle sur le tableau d'un des selects et crée un objet CarSelector qui contient 4 attributs make, model, gen, description
+
+if ((makeSelects.length != modelSelects.length) || (modelSelects.length != generationSelects.length) || (generationSelects.length != descriptionSelects.length)) {
+	console.err("Pas le même nombre des selectes Make, Model, Generation et Description, les zones CarSelector sont invalides !!!")
 }
 
-makeSelectTop.on('change', listenerMakeSelectTop);
+makeSelects.forEach(createCarSelectors);
 
-
-var listenerModelSelectTop = function() {
-
-	if (modelSelectTop.getValue() != "") {
-		console.log("Modèle selectionné, update generationSelect");
-		getData(generationSelectTop);
-	}
+function createCarSelectors(value, index) {
+	var carSelector = {
+				make:makeSelects[index],
+				model:modelSelects[index],
+				generation:generationSelects[index],
+				description:descriptionSelects[index],
+	};
+	
+	carSelectors.push(carSelector);
 }
 
-modelSelectTop.on('change', listenerModelSelectTop);
+// On parcourt tous les carSelectors et on assigne à chacun des attributs un listener
 
-
-// FUNCTIONS
-
-function disable(select) {
+carSelectors.forEach(function(carSelector) {
+	carSelector.make.on("change", function() {
+		makeChanged(carSelector);
+	});
 	
-	select.clearOptions();
-	select.addOption({value:"Sélectionnez à gauche"});
-	select.disable();
+	carSelector.model.on("change", function() {
+		modelChanged(carSelector);
+	});
 	
+	carSelector.generation.on("change", function() {
+		generationChanged(carSelector);
+	});
+	
+	carSelector.description.on("change", function() {
+		descriptionChanged(carSelector);
+	});
+	
+});
+
+// Fonctions qui réagissent aux listeners avec comme paramètre le carSelector depuis lequel ils sont appelés
+
+function makeChanged(carSelector) {
+	var makeSelected = carSelector.make.getValue();
+	getDatas(carSelector, makeSelected);
 }
 
-function getData(select) {
-	
-	var make = makeSelectTop.getValue();
-	var model = modelSelectTop.getValue();
-	var generation = generationSelectTop.getValue();
-	
+function modelChanged(carSelector) {
+	var makeSelected = carSelector.make.getValue();
+	var modelSelected = carSelector.model.getValue();
+	getDatas(carSelector, makeSelected, modelSelected);
+}
+
+function generationChanged(carSelector) {
+	var makeSelected = carSelector.make.getValue();
+	var modelSelected = carSelector.model.getValue();
+	var generationSelected = carSelector.generation.getValue();
+	getDatas(carSelector, makeSelected, modelSelected, generationSelected);
+}
+
+
+// Fonctions AJAX
+
+function getDatas(carSelector, make='null', model='null', generation='null') {
+	console.log(make);
+	console.log(model);
+	console.log(generation);
 	var refreshedList = $.ajax({
 		            url: 'index.php?page=vehicleSelect',
 		            type: 'GET',
-		            dataType: 'JSON',
+		            dataType: 'text',
 		            data: {
 			            make: 'Marque',
-			            model: 'Modèle',
-			            generation: 'Génération',
-			            description: 'Motorisation'
+			            model: 'null',
+			            generation: 'null'
 		            },
 		            error: function() {
 			            console.log("erreur");
 		            },
 		            success: function() {
-			            console.log("success, let's update data");
-			            setData(select, refreshedList);
-			            console.log("opération lancée");
+			            updateSelects(refreshedList, carSelector, make, model, generation);
 		            }
 	});
 	
 }
 
-function setData(select, refreshedList) {
-	console.log(JSON.parse(refreshedList.responseText));
-	console.log("données mises à jour");
-	select.clearOptions();
-	select.addOption(JSON.parse(refreshedList.responseText));
-	
+function updateSelects(refreshedList, carSelector, makeSelected, modelSelected, generationSelected) {
+	console.log("go update");
+	console.log(refreshedList.responseText);
 }
-
-
-getData(makeSelectTop);
