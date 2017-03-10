@@ -26,9 +26,9 @@ class VehicleSelectController
 			$arrayFromStd = array();
 			
 			foreach ($stdObj as $value) 
-				$arrayFromStd[] = json_encode($value->make);
+				$arrayFromStd[] = array("value" => $value->make);
 			
-			$return[] = json_encode($arrayFromStd);
+			$return[] = $arrayFromStd;
 			$return[] = array("value" => "Modèles");
 			$return[] = array("value" => "Génération");
 			$return[] = array("value" => "Motorisations");
