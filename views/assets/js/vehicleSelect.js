@@ -60,7 +60,7 @@ function getData(select) {
 	var refreshedList = $.ajax({
 		            url: 'index.php?page=vehicleSelect',
 		            type: 'GET',
-		            dataType: 'text',
+		            dataType: 'JSON',
 		            data: {
 			            make: 'Marque',
 			            model: 'Modèle',
