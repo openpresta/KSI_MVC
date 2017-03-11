@@ -139,7 +139,8 @@ function generationChanged(carSelector) {
 	var modelSelected = carSelector.model.getValue();
 	var generationSelected = carSelector.generation.getValue();
 	getDatas(carSelector, makeSelected, modelSelected, generationSelected);
-	showDescriptions(carSelector);
+
+    setTimeout(function(){ showDescriptions(carSelector); }, 700);
 
 }
 
@@ -226,8 +227,17 @@ carSelectors.forEach(function(carSelector) {
 	
 });
 
+/**
+ * hide 3 bloc make && mode && generation and show bloc descipion
+ * set larger description
+ * @param carSelector
+ */
 function showDescriptions(carSelector) {
-	carSelector.make.style="display:none;"
+	$('#generationSelect').closest('div').hide();
+    $('#modelSelect').closest('div').hide();
+    $('#makeSelect').closest('div').hide();
+    $('#descriptionSelect').closest('div').show();
+    $('#descriptionSelect').next('.selectizeSelects').css('width','494px');
 }
 
 setTimeout(function(){ showPlaceholders() }, 1000);
