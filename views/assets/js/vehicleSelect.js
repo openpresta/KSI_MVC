@@ -233,11 +233,11 @@ carSelectors.forEach(function(carSelector) {
  * @param carSelector
  */
 function showDescriptions(carSelector) {
-	$('#generationSelect').closest('div').hide();
-    $('#modelSelect').closest('div').hide();
-    $('#makeSelect').closest('div').hide();
-    $('#descriptionSelect').closest('div').show();
-    $('#descriptionSelect').next('.selectizeSelects').css('width','494px');
+    $(carSelector.make.$input[0]).next('div').hide();
+    $(carSelector.generation.$input[0]).next('div').hide();
+    $(carSelector.model.$input[0]).next('div').hide();
+    $(carSelector.description.$input[0]).closest('div').show();
+    $(carSelector.description.$input[0]).next('.selectizeSelects').css('width','494px');
 }
 
 setTimeout(function(){ showPlaceholders() }, 1000);
