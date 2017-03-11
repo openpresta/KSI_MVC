@@ -647,8 +647,6 @@
 			
 			var autoSlide = true;
 			var debut = 0;
-			
-			setTimeout(console.log('hello'), 2000);
 				
 						
 			

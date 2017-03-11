@@ -1,7 +1,7 @@
 // CREATE SELECTS USING SELECTIZE //
 
 var $selects = $('.selectizeSelects').selectize({
-	          create: false,
+	          create: true,
 	          valueField: 'value',
 			  labelField: 'value',
 			  searchField: 'value',
@@ -56,18 +56,46 @@ function createCarSelectors(value, index) {
 
 carSelectors.forEach(function(carSelector) {
 	carSelector.make.on("change", function() {
+		
+		var valeur = carSelector.make.getValue();
+		
+		if (valeur == "" || valeur == "null" || valeur == "Marque" || valeur.charAt(0) == '>') {
+			return false;
+		}
+		
+		console.log("Make changed");
 		makeChanged(carSelector);
 	});
 	
 	carSelector.model.on("change", function() {
+		
+		var valeur = carSelector.model.getValue();
+		
+		if (valeur == "" || valeur == "null" || valeur == "Modèle" || valeur.charAt(0) == '>') {
+			return false;
+		}
+		console.log("Model changed");
 		modelChanged(carSelector);
 	});
 	
 	carSelector.generation.on("change", function() {
+		
+		var valeur = carSelector.generation.getValue();
+		
+		if (valeur == "" || valeur == "null" || valeur == "Génération" || valeur.charAt(0) == '>') {
+			return false;
+		}
+		console.log("Generation changed");
 		generationChanged(carSelector);
 	});
 	
 	carSelector.description.on("change", function() {
+		
+		var valeur = carSelector.description.getValue();
+		
+		if (valeur == "" || valeur == "null" || valeur == "Motorisation" || valeur.charAt(0) == '>') {
+			return false;
+		}
 		descriptionChanged(carSelector);
 	});
 	
@@ -91,28 +119,42 @@ function generationChanged(carSelector) {
 	var modelSelected = carSelector.model.getValue();
 	var generationSelected = carSelector.generation.getValue();
 	getDatas(carSelector, makeSelected, modelSelected, generationSelected);
+	showDescriptions(carSelector);
+}
+
+function descriptionChanged(carSelector) {
+	var description = carSelector.description.getValue();
+	description = description.replace(" ", "_");
+	window.location.href = "index.php?page=boitier_additionnel&description="+description;
 }
 
 
 // Fonctions AJAX
 
 function getDatas(carSelector, make='null', model='null', generation='null') {
-	console.log(make);
-	console.log(model);
-	console.log(generation);
+	
+	if (make.charAt(0) == '>') { make = make.substring(2) }
+	if (model.charAt(0) == '>') { model = model.substring(2) }
+	if (generation.charAt(0) == '>') { generation = generation.substring(2) }
+	
+	console.log("Requete AJAX paramètres :")
+	console.log("Marque = " + make);
+	console.log("Modèle = " + model);
+	console.log("Genera = " + generation);
 	var refreshedList = $.ajax({
 		            url: 'index.php?page=vehicleSelect',
 		            type: 'GET',
 		            dataType: 'text',
 		            data: {
-			            make: 'Marque',
-			            model: 'null',
-			            generation: 'null'
+			            make: make,
+			            model: model,
+			            generation: generation
 		            },
 		            error: function() {
-			            console.log("erreur");
+			            console.log("erreur récup AJAX");
 		            },
 		            success: function() {
+			            console.log("success récup AJAX");
 			            updateSelects(refreshedList, carSelector, make, model, generation);
 		            }
 	});
@@ -120,6 +162,72 @@ function getDatas(carSelector, make='null', model='null', generation='null') {
 }
 
 function updateSelects(refreshedList, carSelector, makeSelected, modelSelected, generationSelected) {
-	console.log("go update");
-	console.log(refreshedList.responseText);
+
+	var objectFromJSON = JSON.parse(refreshedList.responseText);
+	var makeList = objectFromJSON[0];
+	var modelList = objectFromJSON[1];
+	var generationList = objectFromJSON[2];
+	var descriptionList = objectFromJSON[3];
+	
+	carSelector.make.clearOptions();
+	carSelector.make.addOption(makeList);
+	if (makeSelected != 'null') {
+		carSelector.make.addOption({value : "> " + makeSelected});
+		carSelector.make.setValue("> " + makeSelected);
+	}
+	
+	carSelector.model.clearOptions();
+	carSelector.model.addOption(modelList);
+	if (modelSelected != 'null') {
+		carSelector.model.addOption({value : "> " + modelSelected});
+		carSelector.model.setValue("> " + modelSelected);
+	}
+	
+	carSelector.generation.clearOptions();
+	carSelector.generation.addOption(generationList);
+	if (generationSelected != 'null') {
+		carSelector.generation.addOption({value : "> " + generationSelected});
+		carSelector.generation.setValue("> " + generationSelected);
+	}
+	
+
+	carSelector.description.clearOptions();
+	carSelector.description.addOption(descriptionList);
+	if (generationSelected != 'null') {
+		carSelector.generation.addOption({value : "> " + generationSelected});
+		carSelector.generation.setValue("> " + generationSelected);
+	}
+
+}
+
+carSelectors.forEach(function(carSelector) {
+
+	getDatas(carSelector);
+	
+});
+
+function showDescriptions(carSelector) {
+	carSelector.make.style="display:none;"
+}
+
+setTimeout(function(){ showPlaceholders() }, 1000);
+
+function showPlaceholders() {
+	console.log("hello");
+	carSelectors.forEach(function(carSelector) {
+
+			carSelector.make.addOption("Marque");
+			carSelector.make.setValue("Marque");
+			
+			carSelector.model.addOption("Modèle");
+			carSelector.model.setValue("Modèle");
+			
+			carSelector.generation.addOption("Génération");
+			carSelector.generation.setValue("Génération");
+			
+			carSelector.description.addOption("Motorisationyyy");
+			carSelector.description.setValue("Motorisation");
+	
+	});	
+	
 }

@@ -15,16 +15,16 @@
 		<link rel="shortcut icon" href="assets/images/content/favicon.png">
 		<link rel="apple-touch-icon" href="assets/images/content/favicon.png">
 		<title>KSI Engineering - Découvrez le complément ultime pour votre véhicule</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/style_blue.css">
-		<link rel="stylesheet" href="assets/css/unslider.css">
-		<link rel="stylesheet" href="assets/css/custom.css">
-		<link rel="stylesheet" href="assets/js/jquery.jqplot.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>style_blue.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>unslider.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>custom.css">
+		<link rel="stylesheet" href="<?php echo PATH_JS; ?>jquery.jqplot.min.css">
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<script src="assets/js/es5-shim.min.js"></script><![endif]-->
+		<script src="<?php echo PATH_JS; ?>html5shiv.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>respond.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>es5-shim.min.js"></script><![endif]-->
 	</head>
 	<body class="cssAnimate smartphone">
 		<div class="ct-preloader">
@@ -54,7 +54,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="assets/pics/logo-light.png" alt=""></a></div>
+							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="<?php echo PATH_PICS; ?>logo-light.png" alt=""></a></div>
 							<ul class="navbar-buttons list-unstyled list-inline pull-right">
 								<li><a href="#order" data-scroll="#order" class="btn-group btn-group--separated"><span class="btn btn-xs btn-transparent btn--white btn-separated">mon véhicule</span><span class="btn btn-xs btn-transparent btn--white btn-separated"><i class="fa fa-search"></i></span></a></li>
 							</ul>
@@ -69,7 +69,7 @@
 					</div>
 				</div>
 			</nav>
-			<header data-background="assets/pics/bmw_420d.jpg" data-height="50%" class="ct-header">
+			<header data-background="<?php echo PATH_PICS; ?>bmw_420d.jpg" data-height="50%" class="ct-header">
 				<div class="inner">
 					<div class="container">
 						<div class="row">
@@ -173,8 +173,8 @@
 							<div class="ct-sectionHeader ct-sectionHeader--typeLight text-center">
 								<h3 class="ct-sectionHeader-title">Vous changez de voiture ?</h3>
 								<h4 class="ct-sectionHeader-subtitle ct-u-padding-bottom-30">Aucun problème ! Le boîtier comprend tout le matériel nécessaire pour pouvoir fonctionner sur n'importe quel véhicule, plus ancien ou plus récent. Une reprogrammation de ceux-ci suffit à les rendre compatible avec votre véhicule.</h4>
-								<img src="assets/pics/box_indicator.png" style="height: 120px;" class="movingBoxIndicator left" />
-								<img src="assets/pics/carsSelectedLeft.png" class="imageVoitures" />
+								<img src="<?php echo PATH_PICS; ?>box_indicator.png" style="height: 120px;" class="movingBoxIndicator left" />
+								<img src="<?php echo PATH_PICS; ?>carsSelectedLeft.png" class="imageVoitures" />
 							</div>
 						</div>
 					</div>
@@ -191,7 +191,7 @@
 						</div>
 					</div>
 					<div class="row text-center">
-						<div class="col-md-4 text-center"><img src="assets/pics/cables.png" alt="" class="" style="height:300px; padding-top: 20px;"></div>
+						<div class="col-md-4 text-center"><img src="<?php echo PATH_PICS; ?>cables.png" alt="" class="" style="height:300px; padding-top: 20px;"></div>
 						<div class="col-md-8">
 							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 30px; color: #5f5f5f; font-size: medium;">A l'aide du guide d'installation et des vidéos explicatives, installez votre boîtier facilement, sans aucune connaissance technique. Notre support technique est disponible 7j/7 pour répondre à vos questions concernant l'installation. Montage également possible directement en nos ateliers.</h4>
 							<div class="row ct-u-padding-top-30">
@@ -216,7 +216,7 @@
 					</div>
 				</div>
 			</section>
-			<section data-background="assets/pics/gaspedal.jpg" data-height="40%" class="ct-header">
+			<section data-background="<?php echo PATH_PICS; ?>gaspedal.jpg" data-height="40%" class="ct-header">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
@@ -239,7 +239,7 @@
 						</div>
 					</div>
 					<div class="row ct-u-padding-top-40">
-						<div class="col-md-3 col-md-offset-2 text-center ct-u-padding-top-20"><img src="assets/pics/tuv_emc.png" alt="" class=""></div>
+						<div class="col-md-3 col-md-offset-2 text-center ct-u-padding-top-20"><img src="<?php echo PATH_PICS; ?>tuv_emc.png" alt="" class=""></div>
 						<div class="col-md-5">
 							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 30px; color: #5f5f5f; font-size: medium; vertical-align: middle;">Nos technologies sont homologuées pour pouvoir être installées sur des véhicules de tous types sans danger.</h4>
 						</div>
@@ -409,7 +409,7 @@
 										<div class="col-sm-9">
 											<div class="widget">
 												<div class="widget-inner">
-													<div class="ct-payments-icons"><span class="ct-payment-title">Nous acceptons la plupart des modes de paiement:</span><img src="assets/pics/payment-icons.png" alt=""></div>
+													<div class="ct-payments-icons"><span class="ct-payment-title">Nous acceptons la plupart des modes de paiement:</span><img src="<?php echo PATH_PICS; ?>payment-icons.png" alt=""></div>
 												</div>
 											</div>
 										</div>
@@ -495,18 +495,18 @@
 			</ul>
 		</div>
 		<!-- JavaScripts-->
-		<script src="assets/js/disrupt.min.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>main.js"></script>
 		<script src="assets/form/js/contact-form.js"></script>
 		<!-- Plugins-->
-		<script src="assets/js/plugins/lightgallery/lightgallery-all.js"></script>
-		<script src="assets/js/plugins/lightgallery/init.js"></script>
-		<script src="assets/js/plugins/isotope/jquery.isotope.min.js"></script>
-		<script src="assets/js/plugins/isotope/imagesloaded.js"></script>
-		<script src="assets/js/plugins/isotope/init.js"></script>
-		<script src="assets/js/unslider-min.js"></script> 
-		<script src="assets/js/jquery.jqplot.min.js"></script>
-		<script src="assets/js/plugins/progressBar/progress-bar.js"></script> 
+		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/lightgallery-all.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/init.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/jquery.isotope.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/imagesloaded.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/init.js"></script>
+		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
+		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/progressBar/progress-bar.js"></script> 
 		<script>
 			jQuery(document).ready(function($) {
 				$('.my-slider').unslider({
@@ -524,15 +524,15 @@
 				if (element.hasClass("left")) {
 					element.removeClass("left");
 					element.addClass("center");
-					image.attr("src", "assets/pics/carsSelectedCenter.png");
+					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedCenter.png");
 				} else if (element.hasClass("center")) {
 					element.removeClass("center");
 					element.addClass("right");
-					image.attr("src", "assets/pics/carsSelectedRight.png");
+					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedRight.png");
 				} else if (element.hasClass("right")) {
 					element.removeClass("right");
 					element.addClass("left");
-					image.attr("src", "assets/pics/carsSelectedLeft.png");
+					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedLeft.png");
 				}
 				
 			}
