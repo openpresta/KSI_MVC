@@ -46,7 +46,7 @@ function createCarSelectors(value, index) {
 				make:makeSelects[index],
 				model:modelSelects[index],
 				generation:generationSelects[index],
-				description:descriptionSelects[index],
+				description:descriptionSelects[index]
 	};
 	
 	carSelectors.push(carSelector);
@@ -112,6 +112,26 @@ function modelChanged(carSelector) {
 	var makeSelected = carSelector.make.getValue();
 	var modelSelected = carSelector.model.getValue();
 	getDatas(carSelector, makeSelected, modelSelected);
+    /**
+     * time out car normalement asynch false il faut que le ajax fini pour terminer la traitement
+     */
+    setTimeout(function(){ checkGeneration(carSelector) }, 500);
+
+}
+/**
+ * if make && model && !generation set toutes les version par default
+ * @param carSelector
+ */
+function checkGeneration(carSelector){
+    var makeLength = $.map(carSelector.make.currentResults.items, function(n, i) { return i; }).length;
+    var generationLength = $.map(carSelector.generation.currentResults.items, function(n, i) { return i; }).length;
+    var modelLength = $.map(carSelector.model.currentResults.items, function(n, i) { return i; }).length;
+
+    // if we have make and model and one generation set default 1
+    if(makeLength>1 && modelLength>1 && generationLength==1 ){
+        carSelector.generation.setValue("Toutes les versions");
+    }
+
 }
 
 function generationChanged(carSelector) {
@@ -120,6 +140,7 @@ function generationChanged(carSelector) {
 	var generationSelected = carSelector.generation.getValue();
 	getDatas(carSelector, makeSelected, modelSelected, generationSelected);
 	showDescriptions(carSelector);
+
 }
 
 function descriptionChanged(carSelector) {
@@ -144,8 +165,8 @@ function getDatas(carSelector, make='null', model='null', generation='null') {
 	var refreshedList = $.ajax({
 		            url: 'index.php?page=vehicleSelect',
 		            type: 'GET',
-		            dataType: 'text',
-		            data: {
+                    dataType: 'text',
+                    data: {
 			            make: make,
 			            model: model,
 			            generation: generation
@@ -222,10 +243,10 @@ function showPlaceholders() {
 			
 			carSelector.generation.addOption("Génération");
 			carSelector.generation.setValue("Génération");
-			
+
 			carSelector.description.addOption("Motorisationyyy");
 			carSelector.description.setValue("Motorisation");
-	
-	});	
-	
+
+    });
+
 }
