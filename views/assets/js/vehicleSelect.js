@@ -254,7 +254,7 @@ function showPlaceholders() {
 			carSelector.generation.addOption("Génération");
 			carSelector.generation.setValue("Génération");
 
-			carSelector.description.addOption("Motorisationyyy");
+			carSelector.description.addOption("Motorisation");
 			carSelector.description.setValue("Motorisation");
 
     });
