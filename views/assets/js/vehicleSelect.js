@@ -4,8 +4,8 @@ var $selects = $('.selectizeSelects').selectize({
 	          create: true,
 	          valueField: 'value',
 			  labelField: 'value',
-			  searchField: 'value',
-			  sortField: 'value'
+			  searchField: 'value'
+
 });
 
 // OBJECTS FOR EACH CarSelector //
@@ -168,7 +168,6 @@ function updateSelects(refreshedList, carSelector, makeSelected, modelSelected, 
 	var modelList = objectFromJSON[1];
 	var generationList = objectFromJSON[2];
 	var descriptionList = objectFromJSON[3];
-	
 	carSelector.make.clearOptions();
 	carSelector.make.addOption(makeList);
 	if (makeSelected != 'null') {
@@ -213,7 +212,6 @@ function showDescriptions(carSelector) {
 setTimeout(function(){ showPlaceholders() }, 1000);
 
 function showPlaceholders() {
-	console.log("hello");
 	carSelectors.forEach(function(carSelector) {
 
 			carSelector.make.addOption("Marque");
