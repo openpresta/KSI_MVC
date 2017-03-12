@@ -92,8 +92,10 @@ carSelectors.forEach(function(carSelector) {
 	carSelector.description.on("change", function() {
 		
 		var valeur = carSelector.description.getValue();
+		console.log("event changement description");
 		
-		if (valeur == "" || valeur == "null" || valeur == "Motorisation" || valeur.charAt(0) == '>') {
+		if (valeur == "" || valeur == "null" || valeur == "Motorisation" || valeur == "Sélectionnez la motorisation" || valeur.charAt(0) == '>') {
+			console.log("avoid event");
 			return false;
 		}
 		descriptionChanged(carSelector);
@@ -106,6 +108,14 @@ carSelectors.forEach(function(carSelector) {
 function makeChanged(carSelector) {
 	var makeSelected = carSelector.make.getValue();
 	getDatas(carSelector, makeSelected);
+	
+	setTimeout(function(){
+		carSelector.model.addOption({value:"Modèle"});
+		carSelector.model.setValue("Modèle");
+		
+		carSelector.generation.addOption({value:"Génération"});
+		carSelector.generation.setValue("Génération");
+	}, 100);
 }
 
 function modelChanged(carSelector) {
@@ -128,8 +138,14 @@ function checkGeneration(carSelector){
     var modelLength = $.map(carSelector.model.currentResults.items, function(n, i) { return i; }).length;
 
     // if we have make and model and one generation set default 1
-    if(makeLength>1 && modelLength>1 && generationLength==1 ){
+    if(makeLength>1 && modelLength>1 && generationLength===1 ){
+	    
         carSelector.generation.setValue("Toutes");
+        
+        if (carSelector.generation.options["Toutes"] === undefined) {
+	        carSelector.generation.addOption({value:"Génération"});
+			carSelector.generation.setValue("Génération");
+        }
     }
 
 }
@@ -233,14 +249,19 @@ carSelectors.forEach(function(carSelector) {
  * @param carSelector
  */
 function showDescriptions(carSelector) {
+	$(carSelector.description.$input[0]).next('.selectizeSelects').addClass("largeInput");
+	
     $(carSelector.make.$input[0]).next('div').hide();
     $(carSelector.generation.$input[0]).next('div').hide();
     $(carSelector.model.$input[0]).next('div').hide();
     $(carSelector.description.$input[0]).closest('div').show();
-    $(carSelector.description.$input[0]).next('.selectizeSelects').css('width','494px');
+    
+    $(carSelector.description.$input[0]).next('.selectizeSelects').css('width','515px');
+    $(carSelector.description.$input[0]).next('.selectizeSelects').css('margin','auto');
+    carSelector.description.setValue("Sélectionnez la motorisation");
 }
 
-setTimeout(function(){ showPlaceholders() }, 1000);
+setTimeout(function(){ showPlaceholders() }, 500);
 
 function showPlaceholders() {
 	carSelectors.forEach(function(carSelector) {

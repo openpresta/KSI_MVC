@@ -142,6 +142,7 @@ class VehicleSelectController
 			
 			$descriptionList = Db::getInstance()->getDescriptions($make, $model, $generation);
 			$descriptionArray = array();
+			$descriptionArray[] = array("value" => "Sélectionnez la motorisation");
 			
 			foreach ($descriptionList as $value) 
 				$descriptionArray[] = array("value" => $value->productDesc);

@@ -84,3 +84,8 @@ ul, menu, dir {
 .form-group .ct-product-title .description .selectize-control .selectizeSelects {
 	width: 70%;
 }
+
+.selectize-control.selectizeSelects.single.largeInput {
+	width: 300px;
+	-webkit-transition: width 1s ease-in-out;transition: width 1s ease-in-out;
+}
