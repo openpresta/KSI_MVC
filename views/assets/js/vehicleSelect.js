@@ -129,7 +129,7 @@ function checkGeneration(carSelector){
 
     // if we have make and model and one generation set default 1
     if(makeLength>1 && modelLength>1 && generationLength==1 ){
-        carSelector.generation.setValue("Toutes les versions");
+        carSelector.generation.setValue("Toutes");
     }
 
 }

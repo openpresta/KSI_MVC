@@ -93,7 +93,7 @@ class VehicleSelectController
 				$generationArray[] = array("value" => $value->generation);
 			
 			if ($generationArray[0]['value'] == "") {
-				$generationArray[0]['value'] = "Toutes les versions";
+				$generationArray[0]['value'] = "Toutes";
 			}
 			
 			$return[] = $generationArray;
@@ -107,7 +107,7 @@ class VehicleSelectController
 			
 			// Tout est sélectionné, on retourne toutes les options + spécifique motorisations
 			
-			if ($generation == "Toutes les versions") { $generation = ""; }
+			if ($generation == "Toutes") { $generation = ""; }
 			
 			$makeList = Db::getInstance()->getMakes();
 			$makeArray = array();
@@ -135,7 +135,7 @@ class VehicleSelectController
 				$generationArray[] = array("value" => $value->generation);
 			
 			if ($generationArray[0]['value'] == "") {
-				$generationArray[0]['value'] = "Toutes les versions";
+				$generationArray[0]['value'] = "Toutes";
 			}
 			
 			$return[] = $generationArray;			
