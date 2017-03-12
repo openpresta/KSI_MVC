@@ -411,7 +411,7 @@
 										</div>
 										<div class="media-body">
 											<h6 class="ct-iconBox-title">Un réglage fin</h6>
-											<p class="ct-iconBox-description">Le boîtier BullPower optimise les paramètres moteurs sur base de pas moins de 7 sources de données, égalant ainsi une reprogrammation.</p>
+											<p class="ct-iconBox-description">Le boîtier KSI optimise les paramètres moteurs sur base de pas moins de 5 sources de données, égalant ainsi une reprogrammation.</p>
 										</div>
 									</div>
 									<div class="ct-iconBox ct-iconBox--type2 ct-iconBox--dark" data-padding="190" data-left-position="-100px" data-width="260px">
