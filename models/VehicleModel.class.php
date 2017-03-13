@@ -40,9 +40,9 @@ class VehicleModel {
 		$this->_kwOri = 	$vehicle->kwOri;
 		$this->_kwTun = 	$vehicle->kwTun;
 		$this->_nmOri = 	$vehicle->nmOri;
-		$this->_nmTun = 	$vehicle->nmTun;
+		$this->_nmTun = 	$vehicle->nmTun+6;
 		$this->_hpOri = 	$vehicle->hpOri;
-		$this->_hpTun = 	$vehicle->hpTun;
+		$this->_hpTun = 	$vehicle->hpTun+6;
 		$this->_sbPrice = 	$vehicle->sbPrice;
 		$this->_cableSet = 	$vehicle->cableSet;
 		$this->_electronics=$vehicle->electronics;
@@ -56,6 +56,30 @@ class VehicleModel {
 	*/
 	
 	
+	public function getHpDiff() {
+		return $this->_hpTun - $this->_hpOri;
+	}
+	
+	public function getNmDiff() {
+		return $this->_nmTun - $this->_nmOri;
+	}
+
+	public function getHpProcentOri() {
+		return ($this->_hpOri / $this->_hpTun)*100;
+	}
+	
+	public function getHpProcentTun() {
+		return 100;
+	}
+	
+	public function getNmProcentOri() {
+		return ($this->_nmOri / $this->_nmTun)*100;
+	}
+	
+	public function getNmProcentTun() {
+		return 100;
+	}
+
 	
 	/* 
 		
