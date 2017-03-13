@@ -244,7 +244,7 @@
 									</div>
 								</div>
 								<div class="col-md-5 text-center ct-u-padding-top-50">
-									<div id="chartdiv" style="height:300px;width:100%"></div>
+									<div id="dynoDiv" style="height:300px;width:100%"></div>
 								</div>
 							</li>
 							<li class="unslider_element">
@@ -433,135 +433,8 @@
 			
 			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
 						
-			<!-- Footer-->
-			<footer class="ct-footer">
-				<div class="ct-footer-top">
-					<div class="container">			
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-preFooter ct-u-padding-top-60">
-									<div class="row">
-										<div class="col-sm-12 col-md-6 text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled list-inline ct-socials text-center-sm ct-u-padding-top-15">
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Vkontakte"><i class="fa fa-vk"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Rss"><i class="fa fa-rss"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 text-right text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<div role="alert" style="display:none" class="successMessage alert alert-success alert-dismissible">Thank you. Your message has been sent correctly.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x</button>
-													</div>
-													<div role="alert" style="display:none" class="successError alert alert-danger alert-dismissible">Ups! An error occured. Please try again later.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x  </button>
-													</div>
-													<form action="assets/form/send.php" method="POST" data-email-subject="Newsletter" class="ct-newsletter form-inline validateIt">
-														<div class="form-group">
-															<label for="ct-newsletter">Abonnez-vous à la newsletter</label><span class="inner">
-															<input type="email" id="ct-newsletter" placeholder="Adresse e-mail" name="field[]" required="required" class="form-control"/>
-															<button type="submit"><i class="fa fa-plus-circle"></i></button></span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<nav class="ct-footer-nav">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-4">
-									<div class="widget">
-										<div class="widget-inner"><img src="<?php echo PATH_PICS; ?>logo_500px.png" style="height:50px; display: block; margin-left: auto; margin-right: auto;" alt="" class="ct-footer-brand"></div>
-									</div>
-								</div>
-								<div class="col-sm-8">
-									<div class="row">
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="index.html">Accueil</a></li>
-														<li><a href="services.html">Selection véhicule</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="faq.html">Boitier additionnel</a></li>
-														<li><a href="privacy-policy.html">Module accélerateur</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="about-us.html">FAQ</a></li>
-														<li><a href="contact-us.html">Contact</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</div>
-				<div class="ct-footer-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-payments">
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="widget">
-												<div class="widget-inner"><a href="shop-locator.html" class="ct-link ct-link--arrowMotive text-uppercase">Où sommes-nous ?</a></div>
-											</div>
-										</div>
-										<div class="col-sm-9">
-											<div class="widget">
-												<div class="widget-inner">
-													<div class="ct-payments-icons"><span class="ct-payment-title">Nous acceptons la plupart des modes de paiement:</span><img src="<?php echo PATH_PICS; ?>payment-icons.png" alt=""></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="ct-footer-copyright">
-									<div class="row">
-										<div class="col-sm-7"><span class="ct-copyright-text">© 2016 Tous droits réservés.</span></div>
-										<div class="col-sm-5">
-											<ul class="list-inline list-unstyled ct-list-terms">
-												<li><a href="terms-conditions.html">CGV</a></li>
-												<li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<?php include(PATH_VIEWS . "footer.php"); ?>
+			
 		</div>
 		<!-- Mobile Menu //-->
 		<div class="ct-menu-mobile">
@@ -576,7 +449,7 @@
 							</ul>
 						</div>
 						<div class="col-xs-7 col-sm-4">
-							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="<?php echo PATH_IMAGES; ?>content/beacon/distrupt-logo-light.png" alt=""></a></div>
+							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img style="height: 30px; padding:5px;" src="<?php echo PATH_PICS; ?>logo.png" alt=""></a></div>
 						</div>
 						<div class="col-xs-5 col-sm-4">
 							<ul role="menu" class="nav navbar-nav">
@@ -592,32 +465,25 @@
 		<div class="navbar-beacon">
 			<ul class="list-unstyled">
 				<li class="nav-item dropdown">
-					<a href="#">Home<i class="fa fa-angle-double-down"></i></a>
+					<a href="#">Boîtier additionnel<i class="fa fa-angle-double-down"></i></a>
 					<ul role="menu" class="dropdown-menu">
-						<li class="nav-item"><a href="index3.html">Smartwatch</a></li>
-						<li class="nav-item"><a href="index.html">Drone</a></li>
-						<li class="nav-item"><a href="index5.html">Smartphone</a></li>
-						<li class="nav-item"><a href="index2.html">Beacon</a></li>
-						<li class="nav-item"><a href="index4.html">VR</a></li>
+						<li class="nav-item"><a href="index3.html">Présentation</a></li>
+						<li class="nav-item"><a href="index.html">Atouts</a></li>
+						<li class="nav-item"><a href="index5.html">Certifications</a></li>
+						<li class="nav-item"><a href="index2.html">Technologies</a></li>
 					</ul>
 				</li>
-				<li class="nav-item"><a href="#features" data-scroll="#features">Features</a></li>
-				<li class="nav-item"><a href="#product" data-scroll="#product">Product</a></li>
 				<li class="nav-item dropdown">
-					<a href="services.html">Pages<i class="fa fa-angle-double-down"></i></a>
+					<a href="#">Module accélérateur<i class="fa fa-angle-double-down"></i></a>
 					<ul role="menu" class="dropdown-menu">
-						<li class="nav-item"><a href="services.html">Services</a></li>
-						<li class="nav-item"><a href="404.html">404 page</a></li>
-						<li class="nav-item"><a href="press-kit.html">Press kit</a></li>
-						<li class="nav-item"><a href="shop-locator.html">Shop locator</a></li>
-						<li class="nav-item"><a href="faq.html">FAQ</a></li>
-						<li class="nav-item"><a href="investors.html">Investors</a></li>
-						<li class="nav-item"><a href="privacy-policy.html">Privacy Policy</a></li>
-						<li class="nav-item"><a href="terms-conditions.html">Terms & conditions</a></li>
+						<li class="nav-item"><a href="index3.html">Présentation</a></li>
+						<li class="nav-item"><a href="index.html">Atouts</a></li>
+						<li class="nav-item"><a href="index5.html">Certifications</a></li>
+						<li class="nav-item"><a href="index2.html">Technologies</a></li>
 					</ul>
 				</li>
-				<li class="nav-item"><a href="about-us.html">About us</a></li>
-				<li class="nav-item"><a href="contact-us.html">Contact</a></li>
+				<li class="nav-item"><a href="#features" data-scroll="#features">FAQ</a></li>
+				<li class="nav-item"><a href="#product" data-scroll="#product">Contact</a></li>
 			</ul>
 			<ul class="list-unstyled list-inline ct-socials--rounded">
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -638,166 +504,7 @@
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>vehicleSelect.js"></script>
-		<script>
-			jQuery(document).ready(function($) {
-				$('#slider_atouts').unslider({
-					arrows: false
-				});
-			});
-			
-			var autoSlide = true;
-			var debut = 0;
-				
-						
-			
-			function slideTo(n) {
-				$('#slider_atouts').unslider('animate:' + n);
-				$('#slider_atouts_icones > div > div').removeClass('selected');
-				$('#slider_atouts_icones > div:nth-child(' + (n+1) + ') > div').addClass('selected');
-				debut++;
-			}
-			
-			
-			var oemHpValues = [[0,0],[1000,23],[2000,78],[3000,129],[4000,174],[5000,219],[6000,270],[7000,300],[8000,0]];
-			var oemNmValues  = [[0,0],[1000,175],[2000,300],[3000,346],[4000,346],[5000,361],[6000,380],[7000,342],[8000,0]];
-			var stageHpValues  = [[0,0],[1000,27],[2000,94],[3000,155],[4000,209],[5000,263],[6000,324],[7000,360],[8000,0]];
-			var stageNmValues  = [[0,0],[1000,221],[2000,379],[3000,437],[4000,437],[5000,456],[6000,480],[7000,432],[8000,0]];
-			
-			var chart;
-			
-			setTimeout(function() {
-			var $ = jQuery;
-			chart = $.jqplot('chartdiv',  [ oemHpValues, oemNmValues, stageHpValues, stageNmValues  ], {
-				animate: true,
-				animateReplot: false,
-				seriesDefaults: {
-					showMarker: false,
-				},
-				axesDefaults: {
-					showTicks: true,
-					showTickMarks: false
-				},
-				grid:{
-					borderColor:'transparent',
-					background: 'transparent',
-					shadow:false,
-					drawBorder:false,
-					shadowColor:'transparent'
-				},
-				axes : {
-					xaxis: {
-						tickInterval: 0,
-						drawMajorGridlines: false,
-						drawMinorGridlines: false,
-						drawMajorTickMarks: false,
-						rendererOptions: {
-							tickInset: 0,
-							minorTicks: 0
-						},
-						tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
-						tickOptions: {
-							fontSize: '10pt',
-							textColor: "#999"
-						},
-						pad: 0,
-						label: 'tr/min',
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#999"
-						}
-			
-					},
-					yaxis: {
-						tickOptions: {
-							formatString: "%'d",
-							fontSize: '10pt',
-							textColor: "gray"
-						},
-						rendererOptions: {
-							forceTickAt0: false,
-							alignTicks: true,
-						},
-						min:0,
-						max:462,
-						pad: 0,
-						label: 'Puissance (CV)',
-						labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#00bcdf"
-						}
-					},
-					y2axis: {
-						tickOptions: {
-							formatString: "%'d",
-							fontSize: '10pt',
-							textColor: "gray"
-						},
-						rendererOptions: {
-							// align the ticks on the y2 axis with the y axis.
-							alignTicks: true,
-							forceTickAt0: false
-						},
-						min:0,
-						max:502,
-						pad: 0,
-						label: 'Couple (Nm)',
-						labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#00bcdf"
-						}
-					}
-				},
-				series: [
-					{
-						color: "gray",
-						yaxis: 'yaxis',
-						rendererOptions: {
-							smooth: true,
-						}
-					},
-					{
-						color:'gray',
-						yaxis: 'y2axis',
-						rendererOptions: {
-							smooth: true
-						}
-					},
-					{
-						color: "#00bcdf",
-						yaxis: 'yaxis',
-						rendererOptions: {
-							smooth: true
-						}
-					},
-					{
-						color:"#00bcdf",
-						yaxis: 'y2axis',
-						rendererOptions: {
-							smooth: true
-						}
-					}
-				]
-			});
-			
-			
-			},1000);
-			
-			function charthover(i) {
-				chart.activateTheme('hover_'+i);
-			}
-			function chartdown() {
-				chart.activateTheme('Default');
-			}
-			
-
-	        
-			
-			
-		</script>
+		<script src="<?php echo PATH_JS; ?>dynoPlotter.js"></script>
+		<script src="<?php echo PATH_JS; ?>atoutsSlider.js"></script>
 	</body>
 </html>
