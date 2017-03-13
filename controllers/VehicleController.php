@@ -13,7 +13,7 @@ class VehicleController {
 			
 			$descriptionUnderlined = $_GET['description'];
 			
-			$descriptionClean = str_replace("_", " ", $descriptionUnderlined);			
+			$descriptionClean = str_replace("+", " ", $descriptionUnderlined);			
 			$vehicle = new VehicleModel($descriptionClean);
 		
 			$make = $vehicle->getMake();
