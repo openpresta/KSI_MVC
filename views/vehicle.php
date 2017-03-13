@@ -69,37 +69,37 @@
 					</div>
 				</div>
 			</nav>
-			<header data-background="<?php echo PATH_PICS; ?>bmw_420d.jpg" data-height="50%" class="ct-header">
+			<header data-background="<?php echo PATH_MAKES_COVER . $make_url . ".jpg" ?>" data-height="50%" class="ct-header">
 				<div class="inner">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="ct-header-title">BMW 420d 190ch</h3>
+								<h3 class="ct-header-title"><?php echo $description; ?></h3>
 							</div>
 						</div>
 					</div>
 				</div>
 			</header>
-			<section data-height="50%">
+			<section data-height="50%" id="progressHpNm">
 			<div class="container ct-u-padding-both-50 ct-u-padding-bottom-20">
 				<div class="col-md-6">
 					<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
 						<h3 class="h1 ct-sectionHeader-title text-center ct-u-padding-bottom-30"><small> <span>Courbe </span>de puissance</small></h3>
 					</div>
-					<div id="chartdiv" style="height:300px;width:100%"></div>
+					<div id="dynoDiv" style="height:300px;width:100%"></div>
 				</div>
 				<div class="col-md-6">
 					<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
-						<h3 class="h1 ct-sectionHeader-title text-center"><small> <span>+</span>32ch<span> et +</span>60Nm</small></h3>
-						<h4 class="ct-sectionHeader-subtitle" style="padding-bottom: 20px;">Un gain de 32 chevaux qui améliore le comportement sportif du véhicule et 60Nm de couple en plus qui ajoute un véritable agrément de conduite au véhicule, moins de rétro-gradages, meilleures reprises et consommation en baisse.</h4>
+						<h3 class="h1 ct-sectionHeader-title text-center"><small> <span>+</span><?php echo $hpDiff; ?>ch<span> et +</span><?php echo $nmDiff; ?>Nm</small></h3>
+						<h4 class="ct-sectionHeader-subtitle" style="padding-bottom: 20px;">Un gain de <?php echo $hpDiff; ?> chevaux qui améliore le comportement sportif du véhicule et <?php echo $nmDiff; ?> Nm de couple en plus qui ajoute un véritable agrément de conduite au véhicule, moins de rétro-gradages, meilleures reprises et consommation en baisse.</h4>
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="ct-progressBar">
 									<div class="ct-progressBar-title">Puissance d'origine</div>
 									<div class="progress">
-										<div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
+										<div role="progressbar" aria-valuenow="<?php echo $hpProcentOri; ?>" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
 											<div class="ct-progressBar-content"></div>
-											<span class="ct-progressBar-text progressBarTextPuissance" aria-x-value="300"></span>
+											<span class="ct-progressBar-text progressBarTextPuissance" aria-x-value="<?php echo $hpOri; ?>"></span>
 										</div>
 									</div>
 								</div>
@@ -108,7 +108,7 @@
 									<div class="progress">
 										<div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
 											<div class="ct-progressBar-content"></div>
-											<span class="ct-progressBar-text  progressBarTextPuissance" aria-x-value="340"></span>
+											<span class="ct-progressBar-text  progressBarTextPuissance" aria-x-value="<?php echo $hpTun; ?>"></span>
 										</div>
 									</div>
 								</div>
@@ -117,9 +117,9 @@
 								<div class="ct-progressBar">
 									<div class="ct-progressBar-title">Couple d'origine</div>
 									<div class="progress">
-										<div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
+										<div role="progressbar" aria-valuenow="<?php echo $nmProcentOri; ?>" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
 											<div class="ct-progressBar-content"></div>
-											<span class="ct-progressBar-text progressBarTextCouple" aria-x-value="420"></span>
+											<span class="ct-progressBar-text progressBarTextCouple" aria-x-value="<?php echo $nmOri; ?>"></span>
 										</div>
 									</div>
 								</div>
@@ -128,7 +128,7 @@
 									<div class="progress">
 										<div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="progress-bar">
 											<div class="ct-progressBar-content"></div>
-											<span class="ct-progressBar-text progressBarTextCouple" aria-x-value="493"></span>
+											<span class="ct-progressBar-text progressBarTextCouple" aria-x-value="<?php echo $nmTun; ?>"></span>
 										</div>
 									</div>
 								</div>
@@ -148,23 +148,25 @@
 								<table class="specsBoitier">
 									<tr>
 										<td>Marque</td>
-										<td>BMW</td>
+										<td><?php echo $make; ?></td>
 									</tr>
 									<tr>
 										<td>Modèle</td>
-										<td>Série 4 (F13)</td>
+										<td><?php echo $modelDetailed; ?></td>
 									</tr>
 									<tr>
 										<td>Cylindrée</td>
-										<td>1993cm3</td>
+										<td><?php echo $volume; ?> cm<sup>3</sup></td>
 									</tr>
+									<?php if ($motorCode != "") { ?>
 									<tr>
 										<td>Code moteur</td>
-										<td>M 57 D 30</td>
+										<td><?php echo $motorCode; ?></td>
 									</tr>
+									<?php } ?>
 									<tr>
 										<td>Câblage moteur</td>
-										<td>1020188-T</td>
+										<td><?php echo $cableSet; ?></td>
 									</tr>
 								</table>
 							</div>
@@ -246,191 +248,10 @@
 					</div>
 				</div>
 			</section>
-			<section id="order" class="ct-dividerSection ct-dividerSection--currency ct-dividerSection--motive ct-call-to-action--type1 ct-u-padding-both-100">
-				<div class="inner">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 text-center-lg">
-								<div class="ct-dividerSection--left vehicle_select">
-									<div class="ct-iconBox ct-iconBox--type3 ct-iconBox--white media">
-										<div class="media-body">
-											<h4 class="ct-iconBox-title">Votre véhicule</h4>
-											<p class="ct-iconBox-description">Séléctionnez votre véhicule</p>
-										</div>
-									</div>
-								</div>
-								<div class="ct-dividerSection--right ct-product vehicle-select">
-									<form class="ct-addToCart ct-contactForm form-inline ct-contactForm--white">
-										<img src="assets/images/content/drone/gallery-item-drone-10.jpg" alt="" class="hidden ct-product-image">
-										<div class="form-group ct-product-title">
-											<span class="hidden">Marque</span>
-											<select>
-												<option value="Audi">Audi</option>
-												<option value="BMW">BMW</option>
-												<option value="Yellow">Skoda</option>
-												<option value="Green">VW</option>
-												<option value="White">Porsche</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Modèle</span>
-											<select>
-												<option value="Black">Modèle</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Motorisation</span>
-											<select>
-												<option value="Black">Motorisation</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn-group btn-group--separated ct-product-button"><span class="btn btn-dark btn-lg btn-separated">Chercher</span><span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-search"></i></span></button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Footer-->
-			<footer class="ct-footer">
-				<div class="ct-footer-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-preFooter ct-u-padding-top-30">
-									<div class="row">
-										<div class="col-sm-12 col-md-6 text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled list-inline ct-socials text-center-sm ct-u-padding-top-15">
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Vkontakte"><i class="fa fa-vk"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Rss"><i class="fa fa-rss"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 text-right text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<div role="alert" style="display:none" class="successMessage alert alert-success alert-dismissible">Thank you. Your message has been sent correctly.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x</button>
-													</div>
-													<div role="alert" style="display:none" class="successError alert alert-danger alert-dismissible">Ups! An error occured. Please try again later.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x  </button>
-													</div>
-													<form action="assets/form/send.php" method="POST" data-email-subject="Newsletter" class="ct-newsletter form-inline validateIt">
-														<div class="form-group">
-															<label for="ct-newsletter">Abonnez-vous à la newsletter</label><span class="inner">
-															<input type="email" id="ct-newsletter" placeholder="Adresse e-mail" name="field[]" required="required" class="form-control"/>
-															<button type="submit"><i class="fa fa-plus-circle"></i></button></span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<nav class="ct-footer-nav">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-4">
-									<div class="widget">
-										<div class="widget-inner"><img src="assets/images/content/drone/distrupt-logo-light.png" alt="" class="ct-footer-brand"></div>
-									</div>
-								</div>
-								<div class="col-sm-8">
-									<div class="row">
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="index.html">Accueil</a></li>
-														<li><a href="services.html">Selection véhicule</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="faq.html">Boitier additionnel</a></li>
-														<li><a href="privacy-policy.html">Module accélerateur</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="about-us.html">FAQ</a></li>
-														<li><a href="contact-us.html">Contact</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</div>
-				<div class="ct-footer-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-payments">
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="widget">
-												<div class="widget-inner"><a href="shop-locator.html" class="ct-link ct-link--arrowMotive text-uppercase">Où sommes-nous ?</a></div>
-											</div>
-										</div>
-										<div class="col-sm-9">
-											<div class="widget">
-												<div class="widget-inner">
-													<div class="ct-payments-icons"><span class="ct-payment-title">Nous acceptons la plupart des modes de paiement:</span><img src="<?php echo PATH_PICS; ?>payment-icons.png" alt=""></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="ct-footer-copyright">
-									<div class="row">
-										<div class="col-sm-7"><span class="ct-copyright-text">© 2016 Tous droits réservés.</span></div>
-										<div class="col-sm-5">
-											<ul class="list-inline list-unstyled ct-list-terms">
-												<li><a href="terms-conditions.html">CGV</a></li>
-												<li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<?php require_once(PATH_VIEWS . "vehicleSelect.php"); ?>
+			
+			<?php require_once(PATH_VIEWS . "footer.php"); ?>
+			
 		</div>
 		<!-- Mobile Menu //-->
 		<div class="ct-menu-mobile">
@@ -494,10 +315,63 @@
 				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 			</ul>
 		</div>
+		<!-- Variables generated by PHP and used by external JS files -->
+		<script>
+			var PATH_PICS = "<?php echo PATH_PICS; ?>";
+			
+			var hpTun = "<?php echo $hpTun; ?>";
+			var nmTun = "<?php echo $nmTun; ?>";
+			
+			var hpOriTab = [
+			    [0, 0],
+			    [1000, <?php echo $hpOri * 0.1	;?>],
+			    [2000, <?php echo $hpOri * 0.23	;?>],
+			    [3000, <?php echo $hpOri * 0.42	;?>],
+			    [4000, <?php echo $hpOri * 0.57	;?>],
+			    [5000, <?php echo $hpOri * 0.72	;?>],
+			    [6000, <?php echo $hpOri * 0.90	;?>],
+			    [7000, <?php echo $hpOri * 1	;?>],
+			    [8000, 0]
+			];
+			var nmOriTab = [
+			    [0, 0],
+			    [1000, <?php echo $nmOri * 0.40	;?>],
+			    [2000, <?php echo $nmOri * 0.85	;?>],
+			    [3000, <?php echo $nmOri * 0.86	;?>],
+			    [4000, <?php echo $nmOri * 0.85	;?>],
+			    [5000, <?php echo $nmOri * 0.90	;?>],
+			    [6000, <?php echo $nmOri * 1	;?>],
+			    [7000, <?php echo $nmOri * 0.4	;?>],
+			    [8000, 0]
+			];
+			var hpTunTab = [
+			    [0, 0],
+			    [1000, <?php echo $hpTun * 0.15	;?>],
+			    [2000, <?php echo $hpTun * 0.30	;?>],
+			    [3000, <?php echo $hpTun * 0.48	;?>],
+			    [4000, <?php echo $hpTun * 0.65	;?>],
+			    [5000, <?php echo $hpTun * 0.78	;?>],
+			    [6000, <?php echo $hpTun * 0.83	;?>],
+			    [7000, <?php echo $hpTun * 1	;?>],
+			    [8000, <?php echo $hpTun * 0	;?>]
+			];
+			var nmTunTab = [
+			    [0, 0],
+			    [1000, <?php echo $nmTun * 0.45	;?>],
+			    [2000, <?php echo $nmTun * 0.90	;?>],
+			    [3000, <?php echo $nmTun * 0.91	;?>],
+			    [4000, <?php echo $nmTun * 0.90	;?>],
+			    [5000, <?php echo $nmTun * 0.95	;?>],
+			    [6000, <?php echo $nmTun * 1	;?>],
+			    [7000, <?php echo $nmTun * 0.5	;?>],
+			    [8000, 0]
+			];
+		</script>
+		
+		
 		<!-- JavaScripts-->
 		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>main.js"></script>
-		<script src="assets/form/js/contact-form.js"></script>
 		<!-- Plugins-->
 		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/lightgallery-all.js"></script>
 		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/init.js"></script>
@@ -507,173 +381,8 @@
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>plugins/progressBar/progress-bar.js"></script> 
-		<script>
-			jQuery(document).ready(function($) {
-				$('.my-slider').unslider({
-					arrows: false
-				});
-			});
-			
-			setInterval(function(){
-			  nextPositionBoxIndicator();
-			}, 2000);
-			
-			function nextPositionBoxIndicator() {
-				var element = $(".movingBoxIndicator");
-				var image = $(".imageVoitures");
-				if (element.hasClass("left")) {
-					element.removeClass("left");
-					element.addClass("center");
-					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedCenter.png");
-				} else if (element.hasClass("center")) {
-					element.removeClass("center");
-					element.addClass("right");
-					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedRight.png");
-				} else if (element.hasClass("right")) {
-					element.removeClass("right");
-					element.addClass("left");
-					image.attr("src", "<?php echo PATH_PICS; ?>carsSelectedLeft.png");
-				}
-				
-			}
-			
-			var oemHpValues = [[0,0],[1000,23],[2000,78],[3000,129],[4000,174],[5000,219],[6000,270],[7000,300],[8000,0]];
-			var oemNmValues  = [[0,0],[1000,175],[2000,300],[3000,346],[4000,346],[5000,361],[6000,380],[7000,342],[8000,0]];
-			var stageHpValues  = [[0,0],[1000,27],[2000,94],[3000,155],[4000,209],[5000,263],[6000,324],[7000,360],[8000,0]];
-			var stageNmValues  = [[0,0],[1000,221],[2000,379],[3000,437],[4000,437],[5000,456],[6000,480],[7000,432],[8000,0]];
-			
-			var chart;
-			setTimeout(function() {
-			var $ = jQuery;
-			chart = $.jqplot('chartdiv',  [ oemHpValues, oemNmValues, stageHpValues, stageNmValues  ], {
-				animate: true,
-				animateReplot: false,
-				seriesDefaults: {
-					showMarker: false,
-				},
-				axesDefaults: {
-					showTicks: true,
-					showTickMarks: false
-				},
-				grid:{
-					borderColor:'transparent',
-					background: 'transparent',
-					shadow:false,
-					drawBorder:false,
-					shadowColor:'transparent'
-				},
-				axes : {
-					xaxis: {
-						tickInterval: 0,
-						drawMajorGridlines: false,
-						drawMinorGridlines: false,
-						drawMajorTickMarks: false,
-						rendererOptions: {
-							tickInset: 0,
-							minorTicks: 0
-						},
-						tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
-						tickOptions: {
-							fontSize: '10pt',
-							textColor: "#999"
-						},
-						pad: 0,
-						label: 'tr/min',
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#999"
-						}
-			
-					},
-					yaxis: {
-						tickOptions: {
-							formatString: "%'d",
-							fontSize: '10pt',
-							textColor: "gray"
-						},
-						rendererOptions: {
-							forceTickAt0: false,
-							alignTicks: true,
-						},
-						min:0,
-						max:462,
-						pad: 0,
-						label: 'Puissance (CV)',
-						labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#00bcdf"
-						}
-					},
-					y2axis: {
-						tickOptions: {
-							formatString: "%'d",
-							fontSize: '10pt',
-							textColor: "gray"
-						},
-						rendererOptions: {
-							// align the ticks on the y2 axis with the y axis.
-							alignTicks: true,
-							forceTickAt0: false
-						},
-						min:0,
-						max:502,
-						pad: 0,
-						label: 'Couple (Nm)',
-						labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
-						labelOptions: {
-							fontFamily: 'Open Sans',
-							fontSize: '9pt',
-							textColor: "#00bcdf"
-						}
-					}
-				},
-				series: [
-					{
-						color: "gray",
-						yaxis: 'yaxis',
-						rendererOptions: {
-							smooth: true,
-						}
-					},
-					{
-						color:'gray',
-						yaxis: 'y2axis',
-						rendererOptions: {
-							smooth: true
-						}
-					},
-					{
-						color: "#00bcdf",
-						yaxis: 'yaxis',
-						rendererOptions: {
-							smooth: true
-						}
-					},
-					{
-						color:"#00bcdf",
-						yaxis: 'y2axis',
-						rendererOptions: {
-							smooth: true
-						}
-					}
-				]
-			});
-			
-			},1000);
-			
-			function charthover(i) {
-				chart.activateTheme('hover_'+i);
-			}
-			function chartdown() {
-				chart.activateTheme('Default');
-			}
-			
-			
-			
-			
-		</script>
+		<script src="<?php echo PATH_JS; ?>vehicleSelect.js"></script> 
+		<script src="<?php echo PATH_JS; ?>dynoPlotter.js"></script> 
+		<script src="<?php echo PATH_JS; ?>changeCarSlider.js"></script> 
 	</body>
 </html>
