@@ -15,7 +15,7 @@
 	define("PATH_FONTS", PATH_ASSETS . "fonts/");
 	define("PATH_FORM", PATH_ASSETS . "form/");
 	define("PATH_JS", PATH_ASSETS . "js/");
-	
+	define("PATH_MAKES_COVER", PATH_ASSETS . "makes/");
 	
 	$page = 'powerbox';
 	
