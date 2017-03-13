@@ -69,7 +69,7 @@
 					</div>
 				</div>
 			</nav>
-			<header data-background="<?php echo PATH_MAKES_COVER . $make_url . ".jpg" ?>" data-height="50%" class="ct-header">
+			<header data-background="<?php echo PATH_MAKES_COVER . $make_url . ".jpg" ?>" data-height="50%" class="ct-header darken">
 				<div class="inner">
 					<div class="container">
 						<div class="row">
