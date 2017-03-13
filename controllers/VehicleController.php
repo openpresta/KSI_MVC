@@ -15,12 +15,38 @@ class VehicleController {
 			
 			$descriptionClean = str_replace("_", " ", $descriptionUnderlined);			
 			$vehicle = new VehicleModel($descriptionClean);
-			
 		
-			// Le paramètre véhicule est envoyé séparé de _ pour l'URL, il faut que la Classe traite ces underscore
-			// Pour obtenir des résultats cohérents dans la BDD
-			// On créée le véhicule sur base de sa description
-			//$vehicle = new Vehicle($_GET['description']);
+			$make = $vehicle->getMake();
+			$model = $vehicle->getModel();
+			$generation = $vehicle->getGeneration();
+			$description = $vehicle->getProductDesc();
+			$year = $vehicle->getYear();
+			$volume = $vehicle->getVolume();
+			$motorCode = $vehicle->getMotorCode();
+			$tuv = $vehicle->getTuv();
+			$kwOri = $vehicle->getKwOri();
+			$kwTun = $vehicle->getKwTun();
+			$nmOri = $vehicle->getNmOri();
+			$nmTun = $vehicle->getNmTun();
+			$hpOri = $vehicle->getHpOri();
+			$hpTun = $vehicle->getHpTun();
+			$sbPrice = $vehicle->getSbPrice();
+			$cableSet = $vehicle->getCableSet();
+			
+			$hpDiff = $vehicle->getHpDiff();
+			$nmDiff = $vehicle->getNmDiff();
+		
+			$hpProcentOri = $vehicle->getHpProcentOri() - 8;
+			$nmProcentOri = $vehicle->getNmProcentOri() - 8;
+			
+			
+			if ($generation != "") {
+				$modelDetailed = $model . "(" . $generation . ")";
+			} else {
+				$modelDetailed = $model;
+			}
+			
+			$make_url = str_replace(" ", "_", $make);
 		
 			require_once(PATH_VIEWS . 'vehicle.php');
 			
