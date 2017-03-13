@@ -54,7 +54,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="<?php echo PATH_PICS; ?>logo-light.png" alt=""></a></div>
+							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="<?php echo PATH_PICS; ?>logo_500px.png" alt="" style="height: 40px; padding: 5px;"></a></div>
 							<ul class="navbar-buttons list-unstyled list-inline pull-right">
 								<li><a href="#order" data-scroll="#order" class="btn-group btn-group--separated"><span class="btn btn-xs btn-transparent btn--white btn-separated">mon véhicule</span><span class="btn btn-xs btn-transparent btn--white btn-separated"><i class="fa fa-search"></i></span></a></li>
 							</ul>
