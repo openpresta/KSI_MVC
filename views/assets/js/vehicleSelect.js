@@ -162,9 +162,16 @@ function generationChanged(carSelector) {
 
 function descriptionChanged(carSelector) {
 	var description = carSelector.description.getValue();
-	description = description.replace(" ", "_");
-	window.location.href = "index.php?page=boitier_additionnel&description="+description;
+	
+	description = description.replaceAll(" ", "_");
+	
+	window.location.href = description+".html";
 }
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
 
 
 // Fonctions AJAX
