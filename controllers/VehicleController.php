@@ -41,7 +41,7 @@ class VehicleController {
 			
 			
 			if ($generation != "") {
-				$modelDetailed = $model . "(" . $generation . ")";
+				$modelDetailed = $model . " " . $generation;
 			} else {
 				$modelDetailed = $model;
 			}
