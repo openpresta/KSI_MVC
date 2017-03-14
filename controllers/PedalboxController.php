@@ -1,5 +1,5 @@
 <?php 
-class HomeController{
+class PedalBoxController{
 	
 	public function __construct() {
 	
@@ -7,12 +7,7 @@ class HomeController{
 			
 	public function run(){	
 		
-		require_once(PATH_MODELS . 'ConnectDB.php');
-		$listeVehicules = getVehiclesNames();
-		
-		# Un contrôleur se termine en écrivant une vue
-		
-		require_once(PATH_VIEWS . 'home.php');
+		require_once(PATH_VIEWS . 'pedalbox.php');
 		
 	}
 	

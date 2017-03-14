@@ -27,20 +27,9 @@
 		<script src="<?php echo PATH_JS; ?>es5-shim.min.js"></script><![endif]-->
 	</head>
 	<body class="cssAnimate smartphone">
-		<div class="ct-preloader">
-			<div class="ct-preloader-inner">
-				<div class="ct-preloader-logo">
-					<img src="assets/images/content/drone/distrupt-logo-dark.png" alt="">
-					<h6 class="ct-preloader-title">Please wait, loading...</h6>
-					<div class="loading">
-						<div class="loading-line"></div>
-						<div class="loading-break loading-dot-1"></div>
-						<div class="loading-break loading-dot-2"></div>
-						<div class="loading-break loading-dot-3"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
+		<?php require_once(PATH_VIEWS . "loader.php") ?>
+		
 		<div class="ct-cart">
 			<div class="ct-cart__inner">
 				<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>

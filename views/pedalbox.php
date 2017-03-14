@@ -12,25 +12,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
-		<link rel="shortcut icon" href="assets/images/content/favicon.png">
-		<link rel="apple-touch-icon" href="assets/images/content/favicon.png">
+		<link rel="shortcut icon" href="<?php echo PATH_IMAGES; ?>content/favicon.png">
+		<link rel="apple-touch-icon" href="<?php echo PATH_IMAGES; ?>content/favicon.png">
 		<title>KSI Engineering - Découvrez le complément ultime pour votre véhicule</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/style_blue.css">
-		<link rel="stylesheet" href="assets/css/unslider.css">
-		<link rel="stylesheet" href="assets/css/custom.css">
-		<link rel="stylesheet" href="assets/js/jquery.jqplot.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>style_blue.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>unslider.css">
+		<link rel="stylesheet" href="<?php echo PATH_CSS; ?>custom.css">
+		<link rel="stylesheet" href="<?php echo PATH_JS; ?>jquery.jqplot.min.css">
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<script src="assets/js/es5-shim.min.js"></script><![endif]-->
+		<script src="<?php echo PATH_JS; ?>html5shiv.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>respond.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>es5-shim.min.js"></script><![endif]-->
 	</head>
 	<body class="cssAnimate smartphone">
 		<div class="ct-preloader">
 			<div class="ct-preloader-inner">
 				<div class="ct-preloader-logo">
-					<img src="assets/images/content/drone/distrupt-logo-dark.png" alt="">
+					<img src="<?php echo PATH_IMAGES; ?>content/drone/distrupt-logo-dark.png" alt="">
 					<h6 class="ct-preloader-title">Please wait, loading...</h6>
 					<div class="loading">
 						<div class="loading-line"></div>
@@ -68,79 +68,24 @@
 					</div>
 				</div>
 			</nav>
-			<header data-background="assets/pics/rs6_gray.jpg" data-height="60%" class="ct-header">
+			<header data-background="<?php echo PATH_PICS; ?>rs6_gray.jpg" data-height="60%" class="ct-header darken">
 				<div class="inner">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<img src="assets/pics/logo_500px.png" class="logoHeaderPedalBox" style="height:100px; display:block; padding-bottom: 20px;" alt="">
+								<img src="<?php echo PATH_PICS; ?>logo_500px.png" class="logoHeaderPedalBox" style="height:100px; display:block; padding-bottom: 20px;" alt="">
 								<h3 class="ct-header-title">PedalBox</h3>
 							</div>
 						</div>
 					</div>
 				</div>
 			</header>
-			<section id="order" class="ct-dividerSection ct-dividerSection--currency ct-dividerSection--motive ct-call-to-action--type1 ct-u-padding-both-100">
-				<div class="inner">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 text-center-lg">
-								<div class="ct-dividerSection--left vehicle_select">
-									<div class="ct-iconBox ct-iconBox--type3 ct-iconBox--white media">
-										<div class="media-body">
-											<h4 class="ct-iconBox-title">Votre véhicule</h4>
-											<p class="ct-iconBox-description">Séléctionnez votre véhicule</p>
-										</div>
-									</div>
-								</div>
-								<div class="ct-dividerSection--right ct-product vehicle-select">
-									<form class="ct-addToCart ct-contactForm form-inline ct-contactForm--white">
-										<img src="assets/images/content/drone/gallery-item-drone-10.jpg" alt="" class="hidden ct-product-image">
-										<div class="form-group ct-product-title">
-											<span class="hidden">Marque</span>
-											<select>
-												<option value="Audi">Audi</option>
-												<option value="BMW">BMW</option>
-												<option value="Yellow">Skoda</option>
-												<option value="Green">VW</option>
-												<option value="White">Porsche</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Modèle</span>
-											<select>
-												<option value="Black">Modèle</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Motorisation</span>
-											<select>
-												<option value="Black">Motorisation</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn-group btn-group--separated ct-product-button"><span class="btn btn-dark btn-lg btn-separated">Chercher</span><span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-search"></i></span></button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
 			<section id="moreinfo">
 				<div class="ct-gallery--col2">
 					<div class="ct-gallery-item">
 						<figure class="ct-imageBox ct-imageBox--inline ct-imageBox--left">
-							<img src="assets/pics/more-col.jpg" alt="">
+							<img src="<?php echo PATH_PICS; ?>more-col.jpg" alt="">
 							<figcaption>
 								<div class="inner">
 									<div class="inner-cell">
@@ -158,7 +103,7 @@
 					</div>
 					<div class="ct-gallery-item">
 						<figure class="ct-imageBox ct-imageBox--inline">
-							<img src="assets/images/content/smartphone/more-col2.jpg" alt="">
+							<img src="<?php echo PATH_IMAGES; ?>content/smartphone/more-col2.jpg" alt="">
 							<figcaption>
 								<div class="inner">
 									<div class="inner-cell">
@@ -178,7 +123,7 @@
 			</section>
 			<section>
 			<div class="container">
-				<div class="col-md-8 col-md-offset-2 ct-u-padding-top-70 ct-u-padding-bottom-100">
+				<div class="col-md-8 col-md-offset-2 ct-u-padding-top-60 ct-u-padding-bottom-100">
 					<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
 						<h3 class="h1 ct-sectionHeader-title text-center"><small>KS<span class="ct-u-colorMotive ct-u-color--accent">I</span> PedalBox</small></h3>
 						<h4 class="ct-sectionHeader-subtitle" style="padding-bottom: 20px;">Profitez d'une réponse instantanée de l'accélérateur, d'un moteur plus souple et d'un agrément de conduite sans pareil.</h4>
@@ -186,7 +131,7 @@
 							<ul class="ct-list-decorated">
 								<li><span>Améliore le temps de réponse</span>
 								</li>
-								<li><span>+ de couple à basse vitesse</span>
+								<li><span>+ de couple bas dans les tours</span>
 								</li>
 							</ul>
 						</div>
@@ -202,7 +147,7 @@
 				</div>
 			</div>
 			<section>
-			<section data-background="assets/pics/gaspedal.jpg" class="ct-header">
+			<section data-background="<?php echo PATH_PICS; ?>gaspedal.jpg" class="ct-header">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
@@ -244,7 +189,7 @@
 							</div>
 						</div>
 						<div class="col-md-6 text-center">
-							<img src="assets/pics/gaspedal-detail.png" />
+							<img src="<?php echo PATH_PICS; ?>gaspedal-detail.png" />
 						</div>
 					</div>
 				</div>
@@ -259,198 +204,15 @@
 						</div>
 					</div>
 					<div class="row ct-u-padding-top-40">
-						<div class="col-md-3 col-md-offset-2 text-center ct-u-padding-top-50"><img src="assets/pics/tuv_emc.png" alt="" class=""></div>
+						<div class="col-md-3 col-md-offset-2 text-center ct-u-padding-top-50"><img src="<?php echo PATH_PICS; ?>tuv_emc.png" alt="" class=""></div>
 						<div class="col-md-5">
 							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 20px; color: #5f5f5f; font-size: medium; vertical-align: middle;">Nos technologies sont homologuées pour pouvoir être installées sur des véhicules de tous types sans danger. Comme le KSI PedalBox ne change pas les caractéristiques techniques de votre véhicules, il n'est pas nécessaire de passer d'autres homologations ou même de déclarer cette installation à votre assureur.</h4>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section id="order" class="ct-dividerSection ct-dividerSection--currency ct-dividerSection--motive ct-call-to-action--type1 ct-u-padding-both-100">
-				<div class="inner">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 text-center-lg">
-								<div class="ct-dividerSection--left vehicle_select">
-									<div class="ct-iconBox ct-iconBox--type3 ct-iconBox--white media">
-										<div class="media-body">
-											<h4 class="ct-iconBox-title">Votre véhicule</h4>
-											<p class="ct-iconBox-description">Séléctionnez votre véhicule</p>
-										</div>
-									</div>
-								</div>
-								<div class="ct-dividerSection--right ct-product vehicle-select">
-									<form class="ct-addToCart ct-contactForm form-inline ct-contactForm--white">
-										<img src="assets/images/content/drone/gallery-item-drone-10.jpg" alt="" class="hidden ct-product-image">
-										<div class="form-group ct-product-title">
-											<span class="hidden">Marque</span>
-											<select>
-												<option value="Audi">Audi</option>
-												<option value="BMW">BMW</option>
-												<option value="Yellow">Skoda</option>
-												<option value="Green">VW</option>
-												<option value="White">Porsche</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Modèle</span>
-											<select>
-												<option value="Black">Modèle</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group ct-product-title">
-											<span class="hidden">Motorisation</span>
-											<select>
-												<option value="Black">Motorisation</option>
-												<option value="Purple">Purple</option>
-												<option value="Yellow">Yellow</option>
-												<option value="Green">Green</option>
-												<option value="White">White</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn-group btn-group--separated ct-product-button"><span class="btn btn-dark btn-lg btn-separated">Chercher</span><span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-search"></i></span></button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Footer-->
-			<footer class="ct-footer">
-				<div class="ct-footer-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-preFooter ct-u-padding-top-30">
-									<div class="row">
-										<div class="col-sm-12 col-md-6 text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled list-inline ct-socials text-center-sm ct-u-padding-top-15">
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Vkontakte"><i class="fa fa-vk"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-														<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Rss"><i class="fa fa-rss"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 text-right text-center-md">
-											<div class="widget">
-												<div class="widget-inner">
-													<div role="alert" style="display:none" class="successMessage alert alert-success alert-dismissible">Thank you. Your message has been sent correctly.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x</button>
-													</div>
-													<div role="alert" style="display:none" class="successError alert alert-danger alert-dismissible">Ups! An error occured. Please try again later.
-														<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x  </button>
-													</div>
-													<form action="assets/form/send.php" method="POST" data-email-subject="Newsletter" class="ct-newsletter form-inline validateIt">
-														<div class="form-group">
-															<label for="ct-newsletter">Abonnez-vous à la newsletter</label><span class="inner">
-															<input type="email" id="ct-newsletter" placeholder="Adresse e-mail" name="field[]" required="required" class="form-control"/>
-															<button type="submit"><i class="fa fa-plus-circle"></i></button></span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<nav class="ct-footer-nav">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-4">
-									<div class="widget">
-										<div class="widget-inner"><img src="assets/images/content/drone/distrupt-logo-light.png" alt="" class="ct-footer-brand"></div>
-									</div>
-								</div>
-								<div class="col-sm-8">
-									<div class="row">
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="index.html">Accueil</a></li>
-														<li><a href="services.html">Selection véhicule</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="faq.html">Boitier additionnel</a></li>
-														<li><a href="privacy-policy.html">Module accélerateur</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 col-xs-6">
-											<div class="widget">
-												<div class="widget-inner">
-													<ul class="list-unstyled ct-menu-footer">
-														<li><a href="about-us.html">FAQ</a></li>
-														<li><a href="contact-us.html">Contact</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</div>
-				<div class="ct-footer-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="ct-payments">
-									<div class="row">
-										<div class="col-sm-3">
-											<div class="widget">
-												<div class="widget-inner"><a href="shop-locator.html" class="ct-link ct-link--arrowMotive text-uppercase">Où sommes-nous ?</a></div>
-											</div>
-										</div>
-										<div class="col-sm-9">
-											<div class="widget">
-												<div class="widget-inner">
-													<div class="ct-payments-icons"><span class="ct-payment-title">Nous acceptons la plupart des modes de paiement:</span><img src="assets/pics/payment-icons.png" alt=""></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="ct-footer-copyright">
-									<div class="row">
-										<div class="col-sm-7"><span class="ct-copyright-text">© 2016 Tous droits réservés.</span></div>
-										<div class="col-sm-5">
-											<ul class="list-inline list-unstyled ct-list-terms">
-												<li><a href="terms-conditions.html">CGV</a></li>
-												<li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
+			<?php include(PATH_VIEWS . "footer.php"); ?>
 		</div>
 		<!-- Mobile Menu //-->
 		<div class="ct-menu-mobile">
@@ -465,7 +227,7 @@
 							</ul>
 						</div>
 						<div class="col-xs-7 col-sm-4">
-							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="assets/images/content/beacon/distrupt-logo-light.png" alt=""></a></div>
+							<div class="navbar-header"><a href="index.html" class="navbar-brand"><img src="<?php echo PATH_IMAGES; ?>content/beacon/distrupt-logo-light.png" alt=""></a></div>
 						</div>
 						<div class="col-xs-5 col-sm-4">
 							<ul role="menu" class="nav navbar-nav">
@@ -515,17 +277,19 @@
 			</ul>
 		</div>
 		<!-- JavaScripts-->
-		<script src="assets/js/disrupt.min.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>main.js"></script>
 		<script src="assets/form/js/contact-form.js"></script>
 		<!-- Plugins-->
-		<script src="assets/js/plugins/lightgallery/lightgallery-all.js"></script>
-		<script src="assets/js/plugins/lightgallery/init.js"></script>
-		<script src="assets/js/plugins/isotope/jquery.isotope.min.js"></script>
-		<script src="assets/js/plugins/isotope/imagesloaded.js"></script>
-		<script src="assets/js/plugins/isotope/init.js"></script>
-		<script src="assets/js/unslider-min.js"></script> 
-		<script src="assets/js/jquery.jqplot.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/lightgallery-all.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/lightgallery/init.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/jquery.isotope.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/imagesloaded.js"></script>
+		<script src="<?php echo PATH_JS; ?>plugins/isotope/init.js"></script>
+		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
+		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
+		<script src="<?php echo PATH_JS; ?>vehicleSelect.js"></script> 
+
 		<script>
 			jQuery(document).ready(function($) {
 				$('.my-slider').unslider({
