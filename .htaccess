@@ -1,2 +1,3 @@
 RewriteEngine On
+RewriteRule ^PEDALBOX$ index.php?page=pedalbox [L]
 RewriteRule ^([^/]*)\.html$ index.php?page=boitier_additionnel&description=$1 [L]
