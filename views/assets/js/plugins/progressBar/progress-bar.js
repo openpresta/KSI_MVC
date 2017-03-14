@@ -1,6 +1,6 @@
 ! function(t) {
     "use strict";
-    t(window).on("scroll", function() {
+    t(window).on("load", function() {
 	    setTimeout(function() {
         t(".progress").each(function() {
             var i = t(this);
@@ -17,6 +17,6 @@
                 couple.text(coupleValue + "Nm"), t.addClass("animating").css("width", r + "%");
             })
         })
-		}, 500);
+		}, 800);
     })
 }(jQuery);
