@@ -1,6 +1,6 @@
 ! function(t) {
     "use strict";
-    t(window).on("load", function() {
+    t(window).on("scroll", function() {
 	    setTimeout(function() {
         t(".progress").each(function() {
             var i = t(this);
