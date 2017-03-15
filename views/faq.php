@@ -68,7 +68,7 @@
 					</div>
 				</div>
 			</nav>
-			<header data-background="<?php echo PATH_PICS; ?>rs6_gray.jpg" data-height="30%" class="ct-header darken">
+			<header data-background="<?php echo PATH_PICS; ?>rs6_gray.jpg" data-height="50%" class="ct-header darken">
 				<div class="inner">
 					<div class="container">
 						<div class="row">
@@ -230,5 +230,12 @@
 		<script src="<?php echo PATH_JS; ?>plugins/isotope/init.js"></script>
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
+		
+		<script>
+			$('document').ready(function(e) {
+			  $('.collapse').collapse({toggle: false});
+			});
+		</script>
+		
 	</body>
 </html>
