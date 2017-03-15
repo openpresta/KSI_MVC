@@ -263,7 +263,9 @@ function showDescriptions(carSelector) {
     $(carSelector.model.$input[0]).next('div').hide();
     $(carSelector.description.$input[0]).closest('div').show();
     
-    $(carSelector.description.$input[0]).next('.selectizeSelects').css('width','515px');
+    $(".form-group.ct-product-title.description").css('width', '65%');
+    $(".form-group.ct-product-title.description").css('margin','auto');;
+    $(carSelector.description.$input[0]).next('.selectizeSelects').css('width','100%');
     $(carSelector.description.$input[0]).next('.selectizeSelects').css('margin','auto');
     carSelector.description.setValue("Sélectionnez la motorisation");
 }
