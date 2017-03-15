@@ -34,14 +34,14 @@ setTimeout(function() {
 				tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
 				tickOptions: {
 					fontSize: '10pt',
-					textColor: "#999"
+					textColor: "#999",
 				},
 				pad: 0,
 				label: 'tr/min',
 				labelOptions: {
 					fontFamily: 'Open Sans',
 					fontSize: '9pt',
-					textColor: "#999"
+					textColor: "#999",
 				}
 	
 			},
@@ -49,7 +49,7 @@ setTimeout(function() {
 				tickOptions: {
 					formatString: "%'d",
 					fontSize: '10pt',
-					textColor: "gray"
+					textColor: "gray",
 				},
 				rendererOptions: {
 					forceTickAt0: false,
@@ -85,7 +85,7 @@ setTimeout(function() {
 				labelOptions: {
 					fontFamily: 'Open Sans',
 					fontSize: '9pt',
-					textColor: "#00bcdf"
+					textColor: "#00bcdf",
 				}
 			}
 		},
