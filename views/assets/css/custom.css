@@ -98,3 +98,16 @@ ul, menu, dir {
 .ct-header.darken {
 	box-shadow: 0 0 0 1000px rgba(0,0,0,0.6) inset;
 }
+
+
+.panel-default > .panel-heading .collapsed:before,
+.panel-default > .panel-heading a.collapsed {
+	color:black !important;
+	font-weight: 200 !important;
+}
+
+.panel-default > .panel-heading :before,
+.panel-default > .panel-heading a{
+	color:#00bcdf !important;
+	font-weight: 900 !important;
+}
