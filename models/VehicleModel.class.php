@@ -1,7 +1,5 @@
 <?php
 
-require_once(PATH_MODELS . 'Db.php');
-
 class VehicleModel {
 		
 	private $_make;

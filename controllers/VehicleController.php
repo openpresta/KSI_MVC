@@ -1,4 +1,7 @@
-<?php 
+<?php
+	
+require_once(PATH_MODELS . 'Db.php');
+	 
 class VehicleController {
 	
 	public function __construct() {
@@ -9,13 +12,18 @@ class VehicleController {
 		
 		require_once(PATH_MODELS . 'VehicleModel.class.php');
 		
-		if (isset($_GET['description'])) {
 			
-			$descriptionUnderlined = $_GET['description'];
-			
-			$descriptionClean = str_replace("+", " ", $descriptionUnderlined);			
-			$vehicle = new VehicleModel($descriptionClean);
+		$descriptionUnderlined = $_GET['description'];
 		
+		$descriptionClean = str_replace("+", " ", $descriptionUnderlined);
+		
+		$db = Db::getInstance();
+		$isValid = $db->isValidDescription($descriptionClean);
+		
+		if ($isValid) {
+				
+			$vehicle = new VehicleModel($descriptionClean);
+				
 			$make = $vehicle->getMake();
 			$model = $vehicle->getModel();
 			$generation = $vehicle->getGeneration();
@@ -50,10 +58,10 @@ class VehicleController {
 		
 			require_once(PATH_VIEWS . 'vehicle.php');
 			
-		} else { 
+		} else {
 			
-			echo "Aucun véhicule passé en paramètre.";
-		
+			header("Location: page_introuvable.html");
+			
 		}
 		
 	}

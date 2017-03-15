@@ -79,5 +79,18 @@ class Db {
 		return $retour;
 		
 	}
+	
+	function isValidDescription($description) {
+		
+		$req = $this->_db->prepare('SELECT make FROM tuningbox WHERE productDesc = ?');
+		$req->execute(array($description));
+	
+		$retour = $req->fetch();
+		
+		if ($retour != "") return true;
+		
+		return false;
+				
+	}
 
 }

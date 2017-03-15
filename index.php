@@ -49,6 +49,11 @@
 			require_once(PATH_CONTROLLERS . "FAQController.php");
 			$controller = new FAQController();
 			break;
+			
+		case 'not_found':
+			require_once(PATH_CONTROLLERS . "notFoundController.php");
+			$controller = new notFoundController();
+			break;
 		
 		case 'vehicle':
 			require_once(PATH_CONTROLLERS . "VehicleController.php");
