@@ -111,3 +111,8 @@ ul, menu, dir {
 	color:#00bcdf !important;
 	font-weight: 900 !important;
 }
+
+body.ct-menu-effect .navbar-beacon li a:hover {
+	background-color: #00bcdf;
+	color: white;
+}

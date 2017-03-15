@@ -25,7 +25,7 @@
 	// GLOBAL VARS FOR LINKS
 	
 	define("PEDALBOX_URL", "pedalbox.html");
-	define("POWERBOX_URL", "");
+	define("POWERBOX_URL", "powerbox.html");
 	
 	$page = 'powerbox';
 	
@@ -40,17 +40,17 @@
 			$controller = new PowerboxController();
 			break;
 			
-		case 'faq':
-			require_once(PATH_CONTROLLERS . "FAQController.php");
-			$controller = new FAQController();
-			break;
-			
 		case 'pedalbox':
 			require_once(PATH_CONTROLLERS . "PedalboxController.php");
 			$controller = new PedalboxController();
 			break;
+			
+		case 'faq':
+			require_once(PATH_CONTROLLERS . "FAQController.php");
+			$controller = new FAQController();
+			break;
 		
-		case 'boitier_additionnel':
+		case 'vehicle':
 			require_once(PATH_CONTROLLERS . "VehicleController.php");
 			$controller = new VehicleController();
 			break;

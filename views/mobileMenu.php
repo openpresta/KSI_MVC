@@ -29,10 +29,10 @@
 				<li class="nav-item dropdown">
 					<a href="#">Boîtier additionnel<i class="fa fa-angle-double-down"></i></a>
 					<ul role="menu" class="dropdown-menu">
-						<li class="nav-item"><a href="index3.html">Présentation</a></li>
-						<li class="nav-item"><a href="index.html">Atouts</a></li>
-						<li class="nav-item"><a href="index5.html">Certifications</a></li>
-						<li class="nav-item"><a href="index2.html">Technologies</a></li>
+						<li class="nav-item"><a href="index.php">Présentation</a></li>
+						<li class="nav-item"><a href="index.php#features">Atouts</a></li>
+						<li class="nav-item"><a href="index.php#">Certifications</a></li>
+						<li class="nav-item"><a href="index.php#">Technologies</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown">

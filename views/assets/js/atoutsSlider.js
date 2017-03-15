@@ -4,11 +4,6 @@ jQuery(document).ready(function($) {
 	});
 });
 
-var autoSlide = true;
-var debut = 0;
-	
-			
-
 function slideTo(n) {
 	$('#slider_atouts').unslider('animate:' + n);
 	$('#slider_atouts_icones > div > div').removeClass('selected');

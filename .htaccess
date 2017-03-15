@@ -1,3 +1,4 @@
 RewriteEngine On
-RewriteRule ^PEDALBOX$ index.php?page=pedalbox [L]
-RewriteRule ^([^/]*)\.html$ index.php?page=boitier_additionnel&description=$1 [L]
+RewriteRule ^pedalbox.html$ index.php?page=pedalbox [L]
+RewriteRule ^powerbox.html$ index.php?page=powerbox [L]
+RewriteRule ^([^/]*)\.html$ index.php?page=vehicle&description=$1 [L]
