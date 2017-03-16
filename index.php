@@ -26,6 +26,8 @@
 	
 	define("PEDALBOX_URL", "pedalbox.html");
 	define("POWERBOX_URL", "powerbox.html");
+	define("FAQ_URL", "faq.html");
+	define("CONTACT_URL", "contact.html");
 	
 	$page = 'powerbox';
 	
@@ -48,6 +50,11 @@
 		case 'faq':
 			require_once(PATH_CONTROLLERS . "FAQController.php");
 			$controller = new FAQController();
+			break;
+			
+		case 'contact':
+			require_once(PATH_CONTROLLERS . "ContactController.php");
+			$controller = new ContactController();
 			break;
 			
 		case 'not_found':
