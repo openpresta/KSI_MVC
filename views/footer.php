@@ -116,7 +116,7 @@
 										<div class="col-sm-7"><span class="ct-copyright-text">© 2016 Tous droits réservés.</span></div>
 										<div class="col-sm-5">
 											<ul class="list-inline list-unstyled ct-list-terms">
-												<li><a href="terms-conditions.html">CGV</a></li>
+												<li><a href="terms-conditions.html">Conditions générales de vente</a></li>
 												<li><a href="privacy-policy.html">Politique de confidentialité</a></li>
 											</ul>
 										</div>
