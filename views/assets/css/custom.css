@@ -116,3 +116,22 @@ body.ct-menu-effect .navbar-beacon li a:hover {
 	background-color: #00bcdf;
 	color: white;
 }
+
+.navbar.navbar-default.navbar-light.navbar-desktop.navbar--animated.navbar-top .navbar-brand {
+	opacity: 0;
+}
+
+.navbar.navbar-default.navbar-light.navbar-desktop.navbar--animated.navbar-top.animated-init.navbar-fixed .navbar-brand {
+	opacity: 1;
+	transition: opacity 1s linear;
+}
+
+.btn.btn-xs.btn-transparent.btn--white.btn-separated.blueBackground:hover {
+	background-color: #00bcdf;
+	color: white;
+	border-color:#00bcdf; 
+}
+
+.bottomLineBlue {
+	border-bottom: 2px solid #00bcdf;
+}
