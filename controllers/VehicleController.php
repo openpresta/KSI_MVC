@@ -16,6 +16,7 @@ class VehicleController {
 		$descriptionUnderlined = $_GET['description'];
 		
 		$descriptionClean = str_replace("+", " ", $descriptionUnderlined);
+		$descriptionClean = str_replace("_", "/", $descriptionClean);
 		
 		$db = Db::getInstance();
 		$isValid = $db->isValidDescription($descriptionClean);

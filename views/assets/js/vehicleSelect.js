@@ -164,6 +164,7 @@ function descriptionChanged(carSelector) {
 	var description = carSelector.description.getValue();
 	
 	description = description.replaceAll(" ", "+");
+	description = description.replaceAll("/", "_");
 	
 	window.location.href = description+".html";
 }
