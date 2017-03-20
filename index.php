@@ -24,6 +24,8 @@
 	
 	// GLOBAL VARS FOR LINKS
 	
+	define("ROOT_FOLDER", "KSI_GITHUB/");
+	
 	define("PEDALBOX_URL", "pedalbox.html");
 	define("POWERBOX_URL", "powerbox.html");
 	define("FAQ_URL", "faq.html");
