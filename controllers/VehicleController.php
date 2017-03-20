@@ -63,6 +63,8 @@ class VehicleController {
 			
 			header("Location: page_introuvable.html");
 			
+			// Problème de gestion des CSS et URL relatives
+						
 		}
 		
 	}

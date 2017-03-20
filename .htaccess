@@ -5,3 +5,4 @@ RewriteRule ^faq.html$ index.php?page=faq [L]
 RewriteRule ^contact.html$ index.php?page=contact [L]
 RewriteRule ^page_introuvable.html$ index.php?page=not_found [L]
 RewriteRule ^([^/]*)\.html$ index.php?page=vehicle&description=$1 [L]
+ErrorDocument 404 /KSI_GITHUB/index.php?page=not_found&redirect=true
