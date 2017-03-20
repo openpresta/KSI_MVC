@@ -135,3 +135,11 @@ body.ct-menu-effect .navbar-beacon li a:hover {
 .bottomLineBlue {
 	border-bottom: 2px solid #00bcdf;
 }
+
+.selectVehicle404noPaddingTop section {
+	padding-top: 30px !important;
+}
+
+#orderButton .btnBlueCustom {
+	background-color: #00bcdf;
+}
