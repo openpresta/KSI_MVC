@@ -28,13 +28,6 @@
 	</head>
 	<body class="cssAnimate smartphone">
 		<?php include(PATH_VIEWS . "loader.php"); ?>
-		<div class="ct-cart">
-			<div class="ct-cart__inner">
-				<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
-				<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
-				<div class="ct-cart__product"></div>
-			</div>
-		</div>
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
 			<?php include(PATH_VIEWS . "navbar.php"); ?>
 			<header data-background="<?php echo PATH_PICS; ?>bmw_x6m_x5m_rear.jpg" data-height="50%" class="ct-header darken bottomLineBlue">
@@ -143,37 +136,11 @@
 		                      <textarea placeholder="Questions / Demande d'informations / Autre*" id="cf-message" rows="1" required="required" class="form-control"></textarea>
 		                      <div class="ct-contactForm-requiredMessage">* Les champs marqués d'une étoile sont obligatoires</div>
 		                      <button type="submit" class="btn btn--withIcon">Envoyer<i class="fa fa-caret-right"></i></button>
-		                      <label for="cf-message" class="sr-only">Questions / Demande d'informations / Autre*</label>
+		                      <label for="cf-message" class="sr-only">Questions / Informations / ...*</label>
 		                    </div>
 		                  </div>
 		                </div>
 		              </form>
-		            </div>
-		          </div>
-		        </div>
-		      </section>
-		      <section data-background="#f3f3f3" id="product" class="ct-u-padding-top-100 ct-u-padding-bottom-80">
-		        <div class="container">
-		          <div class="row">
-		            <div class="col-md-3 col-sm-6">
-		              <div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant">
-		                <div class="ct-iconBox-icon"><i class="fa fa-university"></i></div><a href="investors.html" class="btn btn-transparent btn--motiveColor btn--withIcon">For investors<i class="fa fa-caret-right"></i></a>
-		              </div>
-		            </div>
-		            <div class="col-md-3 col-sm-6">
-		              <div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant">
-		                <div class="ct-iconBox-icon"><i class="fa fa-newspaper-o"></i></div><a href="press-kit.html" class="btn btn-transparent btn--motiveColor btn--withIcon">Press &amp; Media<i class="fa fa-caret-right"></i></a>
-		              </div>
-		            </div>
-		            <div class="col-md-3 col-sm-6">
-		              <div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant">
-		                <div class="ct-iconBox-icon"><i class="fa fa-map-marker"></i></div><a href="shop-locator.html" class="btn btn-transparent btn--motiveColor btn--withIcon">Shop locator<i class="fa fa-caret-right"></i></a>
-		              </div>
-		            </div>
-		            <div class="col-md-3 col-sm-6">
-		              <div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant">
-		                <div class="ct-iconBox-icon"><i class="fa fa-envelope-o"></i></div><a href="contact-us.html" class="btn btn-transparent btn--motiveColor btn--withIcon">Contact us<i class="fa fa-caret-right"></i></a>
-		              </div>
 		            </div>
 		          </div>
 		        </div>

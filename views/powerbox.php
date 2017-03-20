@@ -28,13 +28,6 @@
 	</head>
 	<body class="cssAnimate smartphone">
 		<?php require_once(PATH_VIEWS . "loader.php"); ?>
-		<div class="ct-cart">
-			<div class="ct-cart__inner">
-				<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
-				<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
-				<div class="ct-cart__product"></div>
-			</div>
-		</div>
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
 			
 			<?php include(PATH_VIEWS . 'navbar.php'); ?>
@@ -45,16 +38,6 @@
 						<div class="ct-pageHeader ct-pageHeader--type1">
 							<img src="<?php echo PATH_PICS; ?>logo_500px.png" style="margin-left: auto; margin-right: auto;" height="100" alt="">
 							<h1 class="ct-pageHeader-title ct-u-color--white">Découvrez le meilleur <span class="ct-u-colorMotive">boîtier additionnel</span> du marché</h1>
-							<div class="btn-group ct-u-margin-top-30">
-								<a href="#next-section-1" data-scroll="#next-section-1" class="btn btn-transparent btn--withIcon btn--motiveColor">Découvrez le KSI PowerBox<i class="fa fa-caret-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-background="<?php echo PATH_PICS; ?>vw_golf_gti_performance.jpg" class="item text-center">
-					<div class="item-inner">
-						<div class="ct-pageHeader ct-pageHeader--type1">
-							<h1 class="ct-pageHeader-title ct-u-color--white">Découvrez le meilleur des<span class="ct-u-colorMotive">boîtiers additionnels</span> du marché</h1>
 							<div class="btn-group ct-u-margin-top-30">
 								<a href="#next-section-1" data-scroll="#next-section-1" class="btn btn-transparent btn--withIcon btn--motiveColor">Découvrez le KSI PowerBox<i class="fa fa-caret-right"></i></a>
 							</div>

@@ -29,14 +29,7 @@
 	<body class="cssAnimate smartphone">
 		
 		<?php include(PATH_VIEWS . "loader.php") ?>
-		
-		<div class="ct-cart">
-			<div class="ct-cart__inner">
-				<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
-				<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
-				<div class="ct-cart__product"></div>
-			</div>
-		</div>
+
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
 			
 			<?php include(PATH_VIEWS . 'navbar.php'); ?>
@@ -54,6 +47,7 @@
 			</header>
 			<section data-height="50%" id="progressHpNm">
 			<div class="container ct-u-padding-both-50 ct-u-padding-bottom-20">
+				<div class="row">
 				<div class="col-md-6">
 					<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
 						<h3 class="h1 ct-sectionHeader-title text-center ct-u-padding-bottom-30"><small> <span>Courbe </span>de puissance</small></h3>
@@ -109,6 +103,15 @@
 					</div>
 				</div>
 			</div>
+			<div class="row ct-u-padding-both-30" id="orderButton" style="text-align: center;">
+				<a href="index.html" class="btn-group btn-group--separated">
+					<span class="btn btn-dark btn-lg btn-separated btnBlueCustom">Commander ce KSI PowerBox</span>
+					<span class="btn btn-dark btn-lg btn-separated btnBlueCustom">
+						€ 349
+					</span>
+				</a>
+			</div>
+			</div>
 			</section>
 			<section data-background="#333" data-height="" class="ct-header">
 				<div class="container">
@@ -146,7 +149,7 @@
 						<div class="col-md-6 ct-u-padding-both-100">
 							<div class="ct-sectionHeader ct-sectionHeader--typeLight text-center">
 								<h3 class="ct-sectionHeader-title">Vous changez de voiture ?</h3>
-								<h4 class="ct-sectionHeader-subtitle ct-u-padding-bottom-30">Aucun problème ! Le boîtier comprend tout le matériel nécessaire pour pouvoir fonctionner sur n'importe quel véhicule, plus ancien ou plus récent. Une reprogrammation de ceux-ci suffit à les rendre compatible avec votre véhicule.</h4>
+								<h4 class="ct-sectionHeader-subtitle ct-u-padding-bottom-30">Aucun problème ! Le boîtier additionnel comprend tout le matériel nécessaire pour pouvoir fonctionner sur n'importe quel véhicule, plus ancien ou plus récent. Une reprogrammation de ceux-ci suffit à les rendre compatible avec votre véhicule.</h4>
 								<img src="<?php echo PATH_PICS; ?>box_indicator.png" style="height: 120px;" class="movingBoxIndicator left" />
 								<img src="<?php echo PATH_PICS; ?>carsSelectedLeft.png" class="imageVoitures" />
 							</div>
@@ -167,7 +170,7 @@
 					<div class="row text-center">
 						<div class="col-md-4 text-center"><img src="<?php echo PATH_PICS; ?>cables.png" alt="" class="" style="height:300px; padding-top: 20px;"></div>
 						<div class="col-md-8">
-							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 30px; color: #5f5f5f; font-size: medium;">A l'aide du guide d'installation et des vidéos explicatives, installez votre boîtier facilement, sans aucune connaissance technique. Notre support technique est disponible 7j/7 pour répondre à vos questions concernant l'installation. Montage également possible directement en nos ateliers.</h4>
+							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 30px; color: #5f5f5f; font-size: medium;">A l'aide du guide d'installation et des vidéos explicatives, installez votre boîtier additionnel facilement, sans aucune connaissance technique. Notre support technique est disponible 7j/7 pour répondre à vos questions concernant l'installation. Montage également possible directement en nos ateliers.</h4>
 							<div class="row ct-u-padding-top-30">
 							<div class="col-md-6">
 								<ul class="ct-list-decorated">

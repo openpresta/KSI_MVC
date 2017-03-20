@@ -29,14 +29,7 @@
 	<body class="cssAnimate smartphone">
 		
 		<?php include(PATH_VIEWS . "loader.php"); ?>
-		
-		<div class="ct-cart">
-			<div class="ct-cart__inner">
-				<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
-				<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
-				<div class="ct-cart__product"></div>
-			</div>
-		</div>
+
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
 			
 			<?php include(PATH_VIEWS . 'navbar.php'); ?>
