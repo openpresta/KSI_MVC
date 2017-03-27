@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Single Product e-Commerce HTML Template">
-		<meta name="author" content="createIT">
+		<meta name="description" content="KSI PedalBox : le complément parfait au boîtier additionnel">
+		<meta name="author" content="<?php echo AUTHOR; ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
@@ -27,13 +27,9 @@
 		<script src="<?php echo PATH_JS; ?>es5-shim.min.js"></script><![endif]-->
 	</head>
 	<body class="cssAnimate smartphone">
-		
 		<?php include(PATH_VIEWS . "loader.php"); ?>
-
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
-			
 			<?php include(PATH_VIEWS . 'navbar.php'); ?>
-			
 			<header data-background="<?php echo PATH_PICS; ?>rs6_gray.jpg" data-height="60%" class="ct-header darken">
 				<div class="inner">
 					<div class="container">
@@ -47,49 +43,10 @@
 				</div>
 			</header>
 			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
-			<section id="moreinfo">
-				<div class="ct-gallery--col2">
-					<div class="ct-gallery-item">
-						<figure class="ct-imageBox ct-imageBox--inline ct-imageBox--left">
-							<img src="<?php echo PATH_PICS; ?>more-col.jpg" alt="">
-							<figcaption>
-								<div class="inner">
-									<div class="inner-cell">
-										<div class="ct-imageBox-icon"><i class="fa fa-adn"></i></div>
-									</div>
-									<div class="inner-cell">
-										<div class="ct-imageBox-content">
-											<p>Boîtiers additionnels intelligents et adaptatifs</p>
-											<a href="faq.html" class="btn btn-transparent btn--withIcon btn--motiveColor">KSI PowerBox<i class="fa fa-caret-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
-					<div class="ct-gallery-item">
-						<figure class="ct-imageBox ct-imageBox--inline">
-							<img src="<?php echo PATH_IMAGES; ?>content/smartphone/more-col2.jpg" alt="">
-							<figcaption>
-								<div class="inner">
-									<div class="inner-cell">
-										<div class="ct-imageBox-icon"><i class="fa fa-map-o"></i></div>
-									</div>
-									<div class="inner-cell">
-										<div class="ct-imageBox-content">
-											<p>Optimisation de l'accélérateur</p>
-											<a href="shop-locator.html" class="btn btn-transparent btn--withIcon btn--motiveColor">KSI PedalBox<i class="fa fa-caret-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-			</section>
+			<?php include(PATH_VIEWS . "quickLinks.php"); ?>
 			<section>
 			<div class="container">
-				<div class="col-md-8 col-md-offset-2 ct-u-padding-top-60 ct-u-padding-bottom-100">
+				<div class="col-md-8 col-md-offset-2 ct-u-padding-top-60 ct-u-padding-bottom-50">
 					<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
 						<h3 class="h1 ct-sectionHeader-title text-center"><small>KS<span class="ct-u-colorMotive ct-u-color--accent">I</span> PedalBox</small></h3>
 						<h4 class="ct-sectionHeader-subtitle" style="padding-bottom: 20px;">Profitez d'une réponse instantanée de l'accélérateur, d'un moteur plus souple et d'un agrément de conduite sans pareil.</h4>
@@ -112,6 +69,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="row ct-u-padding-bottom-60" id="orderButton" style="text-align: center;">
+				<a href="#order" class="btn-group btn-group--separated">
+					<span class="btn btn-dark btn-lg btn-separated btnBlueCustom">Commandez votre PedalBox</span>
+					<span class="btn btn-dark btn-lg btn-separated btnBlueCustom">
+					€ <?php echo $pedalBoxPrice; ?>
+					</span>
+				</a>
+			</div>
 			<section>
 			<section data-background="<?php echo PATH_PICS; ?>gaspedal.jpg" class="ct-header">
 				<div class="container">
@@ -128,13 +93,15 @@
 			<section class="ct-u-margin-top-20--minus ct-u-padding-both-100">
 				<div class="container">
 					<div class="row">
-							<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
-								<h3 class="ct-sectionHeader-title">Une réponse instantanée de l'accélérateur.</h3>
-								<h4 class="ct-sectionHeader-subtitle">Toute la puissance du véhicule disponible directement grâce à l'optimisation du signal de l'accélérateur.</h4>
-							</div>
+						<div class="ct-sectionHeader ct-sectionHeader--typeDarken text-center">
+							<h3 class="ct-sectionHeader-title">Une réponse instantanée de l'accélérateur.</h3>
+							<h4 class="ct-sectionHeader-subtitle">Toute la puissance du véhicule disponible directement grâce à l'optimisation du signal de l'accélérateur.</h4>
+						</div>
 					</div>
 					<div class="row" style="padding-top: 50px;">
-						<div class="col-md-4 col-md-offset-1 text-center"><div id="pedalGraphDiv" style="height:300px;width:100%"></div></div>
+						<div class="col-md-4 col-md-offset-1 text-center">
+							<div id="pedalGraphDiv" style="height:300px;width:100%"></div>
+						</div>
 						<div class="col-md-6 col-md-offset-1">
 							<h4 class="ct-sectionHeader-subtitle" style="padding-top: 40px; color: #5f5f5f; font-size: medium;">Un véritable complément au boîtier additionnel, le PedalBox permet d'adapter la sensibilité de l'accélérateur et la réactivité du moteur.</h4>
 							<h4 class="ct-sectionHeader-subtitle text-center" style="padding-top: 30px; color: #5f5f5f; font-size: medium;"><strong>+10%  d'accélération</strong><br>
@@ -142,7 +109,6 @@
 							</h4>
 						</div>
 					</div>
-					
 				</div>
 			</section>
 			<section data-background="#1A1A1A" data-height="40%" class="ct-header ct-u-padding-both-100">
@@ -195,6 +161,5 @@
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>vehicleSelect.js"></script> 
 		<script src="<?php echo PATH_JS; ?>pedalPlotter.js"></script> 
-
 	</body>
 </html>

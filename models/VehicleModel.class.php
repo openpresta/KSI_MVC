@@ -17,10 +17,11 @@ class VehicleModel {
 	private $_nmTun;
 	private $_hpOri;
 	private $_hpTun;
-	private $_sbPrice;
+	private $_powerBoxPrice;
+	public static $pedalBoxPrice = 149;
 	private $_cableSet;
 	private $_electronics;
-
+  
 	public function __construct($description) {
 		
 		$db = Db::getInstance();
@@ -32,6 +33,9 @@ class VehicleModel {
 		$this->_productID =	$vehicle->productID;
 		$this->_productDesc=$vehicle->productDesc;
 		$this->_year =		$vehicle->year;
+		
+		$this->_year = str_replace("ab", "à partir de", $this->_year);
+		
 		$this->_volume = 	$vehicle->volume;
 		$this->_motorCode = $vehicle->motorCode;
 		$this->_tuv = 		$vehicle->tuv;
@@ -41,7 +45,7 @@ class VehicleModel {
 		$this->_nmTun = 	$vehicle->nmTun+6;
 		$this->_hpOri = 	$vehicle->hpOri;
 		$this->_hpTun = 	$vehicle->hpTun+6;
-		$this->_sbPrice = 	$vehicle->sbPrice;
+		$this->_powerBoxPrice=intval($vehicle->sbPrice) + 50;
 		$this->_cableSet = 	$vehicle->cableSet;
 		$this->_electronics=$vehicle->electronics;
 
@@ -145,8 +149,12 @@ class VehicleModel {
 		return $this->_hpTun;
 	}
 
-	public function getSbPrice() {
-		return $this->_sbPrice;
+	public function getPowerBoxPrice() {
+		return $this->_powerBoxPrice;
+	}
+	
+	public static function getPedalBoxPrice() {
+		return self::$pedalBoxPrice;
 	}
 	
 	public function getCableSet() {

@@ -5,7 +5,7 @@ class PowerboxController{
 	
 	}
 			
-	public function run(){	
+	public function run(){
 			
 		require_once(PATH_VIEWS . 'powerbox.php');
 		

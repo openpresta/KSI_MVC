@@ -27,9 +27,22 @@
 	define("ROOT_FOLDER", "KSI_GITHUB/");
 	
 	define("PEDALBOX_URL", "pedalbox.html");
-	define("POWERBOX_URL", "powerbox.html");
+	define("POWERBOX_URL", "boitier-additionnel.html");
 	define("FAQ_URL", "faq.html");
 	define("CONTACT_URL", "contact.html");
+	define("CGV_URL", "conditions-generales-vente.html");
+	define("CONFID_URL", "politique-confidentialite.html");
+	define("RESELLER_URL", "revendeur.html");
+	define("ORDER_URL", "commander-");
+	define("NOT_FOUND_URL", "page-introuvable.html");
+	
+	
+	function chargerClasse($classe) {
+		require_once(PATH_MODELS . $classe . '.class.php');
+	}
+	
+	spl_autoload_register('chargerClasse');
+	
 	
 	$page = 'powerbox';
 	
@@ -57,6 +70,11 @@
 		case 'contact':
 			require_once(PATH_CONTROLLERS . "ContactController.php");
 			$controller = new ContactController();
+			break;
+			
+		case 'order':
+			require_once(PATH_CONTROLLERS . "OrderController.php");
+			$controller = new OrderController();
 			break;
 			
 		case 'not_found':

@@ -12,7 +12,7 @@
 					<li class="nav-item"><a href="<?php echo PEDALBOX_URL; ?>">Module accélerateur</a></li>
 					<li class="nav-item"><a href="<?php echo FAQ_URL; ?>">FAQ</a></li>
 					<li class="nav-item"><a href="<?php echo CONTACT_URL; ?>">Contact</a></li>
-					<li class="nav-item"><a href="#">Devenir revendeur</a></li>
+					<li class="nav-item"><a href="<?php echo RESELLER_URL; ?>">Devenir revendeur</a></li>
 				</ul>
 			</div>
 		</div>

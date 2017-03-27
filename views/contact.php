@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Single Product e-Commerce HTML Template">
-		<meta name="author" content="createIT">
+		<meta name="description" content="Prenez contact avec nous pour obtenir le meilleur boîtier additionnel du marché.">
+		<meta name="author" content="<?php echo AUTHOR; ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
@@ -43,112 +43,115 @@
 				</div>
 			</header>
 			<section data-background="#262626">
-		        <div class="container">
-		          <div class="row">
-		            <div class="col-sm-12">
-		              <div class="ct-address ct-address--col3 ct-address--descendingMotive">
-		                <div class="inner"><a href="tel:01234567890" class="ct-address-item">
-		                    <div class="ct-widget">
-		                      <div class="ct-widget-icon"><i class="fa fa-phone"></i></div>
-		                      <div class="ct-widget-content">
-		                        <h4 class="ct-widget-title">0474017382</h4>
-		                        <p class="ct-widget-description">Appelez-nous !</p>
-		                      </div>
-		                    </div></a><a href="mailto:info@example.com" class="ct-address-item">
-		                    <div class="ct-widget">
-		                      <div class="ct-widget-icon"><i class="fa fa-envelope-o"></i></div>
-		                      <div class="ct-widget-content">
-		                        <h4 class="ct-widget-title">info@ksi.com</h4>
-		                        <p class="ct-widget-description">Par email</p>
-		                      </div>
-		                    </div></a>
-		                  <div class="ct-address-item">
-		                    <div class="ct-widget">
-		                      <div class="ct-widget-icon"><i class="fa fa-clock-o"></i></div>
-		                      <div class="ct-widget-content">
-		                        <h4 class="ct-widget-title">LUN - SAM, 8-18h</h4>
-		                        <p class="ct-widget-description">Heures d'ouvertures</p>
-		                      </div>
-		                    </div>
-		                  </div>
-		                </div>
-		                <div class="ct-address--footer"><i class="fa fa-home"></i><span>Nacherwee 12, 9644 Dahl, Luxembourg</span></div>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="row ct-u-padding-top-80 ct-u-padding-bottom-75">
-		            <div class="col-md-3 col-sm-12">
-		              <div class="ct-iconBox ct-iconBox--type4 media ct-iconBox--white">
-		                <div class="media-left">
-		                  <div class="ct-iconBox-icon"><i class="fa fa-envelope-o"></i></div>
-		                </div>
-		                <div class="media-body">
-		                  <h6 class="ct-iconBox-title">Contactez-nous</h6>
-		                  <p class="ct-iconBox-description"></p>
-		                </div>
-		              </div>
-		            </div>
-		            <div class="col-md-9 col-sm-12 ct-u-padding-top-25">
-		              <div role="alert" style="display:none" class="successMessage alert alert-success alert-dismissible">Thank you. Your message has been sent correctly.
-		                <button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x</button>
-		              </div>
-		              <div role="alert" style="display:none" class="successError alert alert-danger alert-dismissible">Ups! An error occured. Please try again later.
-		                <button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x      </button>
-		              </div>
-		              <form action="assets/form/send.php" method="POST" data-email-subject="Disrupt" class="ct-contactForm validateIt">
-		                <div class="row">
-		                  <div class="col-sm-4">
-		                    <div class="form-group">
-		                      <input type="text" placeholder="Nom*" id="cf-name" name="field[]" required="required" class="form-control"/>
-		                      <label for="cf-name" class="sr-only">Nom*</label>
-		                    </div>
-		                  </div>
-		                  <div class="col-sm-4">
-		                    <div class="form-group">
-		                      <input type="email" placeholder="Adresse e-mail*" id="cf-email" name="field[]" required="required" class="form-control"/>
-		                      <label for="cf-email" class="sr-only">Adresse e-mail*</label>
-		                    </div>
-		                  </div>
-		                  <div class="col-sm-4">
-		                    <div class="form-group">
-		                      <input type="text" placeholder="N° de téléphone" id="cf-website" name="field[]" class="form-control"/>
-		                      <label for="cf-website" class="sr-only">N° de téléphone</label>
-		                    </div>
-		                  </div>
-		                </div>
-		                <div class="row">
-		                  <div class="col-sm-6">
-		                    <div class="form-group">
-		                      <input type="tel" placeholder="Marque du véhicule" id="cf-phone" name="field[]" class="form-control"/>
-		                      <label for="cf-phone" class="sr-only">Marque du véhicule</label>
-		                    </div>
-		                  </div>
-		                  <div class="col-sm-6">
-		                    <div class="form-group">
-		                      <input type="text" placeholder="Modèle / Motorisation / Année" id="cf-subject" name="field[]" required="required" class="form-control"/>
-		                      <label for="cf-subject" class="sr-only">Modèle / Motorisation / Année</label>
-		                    </div>
-		                  </div>
-		                </div>
-		                <div class="row">
-		                  <div class="col-sm-12">
-		                    <div class="form-group">
-		                      <textarea placeholder="Questions / Demande d'informations / Autre*" id="cf-message" rows="1" required="required" class="form-control"></textarea>
-		                      <div class="ct-contactForm-requiredMessage">* Les champs marqués d'une étoile sont obligatoires</div>
-		                      <button type="submit" class="btn btn--withIcon">Envoyer<i class="fa fa-caret-right"></i></button>
-		                      <label for="cf-message" class="sr-only">Questions / Informations / ...*</label>
-		                    </div>
-		                  </div>
-		                </div>
-		              </form>
-		            </div>
-		          </div>
-		        </div>
-		      </section>
-		<?php include(PATH_VIEWS . "footer.php"); ?>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="ct-address ct-address--col3 ct-address--descendingMotive">
+								<div class="inner">
+									<a href="tel:0474017382" class="ct-address-item">
+										<div class="ct-widget">
+											<div class="ct-widget-icon"><i class="fa fa-phone"></i></div>
+											<div class="ct-widget-content">
+												<h4 class="ct-widget-title">0474017382</h4>
+												<p class="ct-widget-description">Appelez-nous !</p>
+											</div>
+										</div>
+									</a>
+									<a href="mailto:info@ksi.com" class="ct-address-item">
+										<div class="ct-widget">
+											<div class="ct-widget-icon"><i class="fa fa-envelope-o"></i></div>
+											<div class="ct-widget-content">
+												<h4 class="ct-widget-title">info@ksi.com</h4>
+												<p class="ct-widget-description">Par email</p>
+											</div>
+										</div>
+									</a>
+									<div class="ct-address-item">
+										<div class="ct-widget">
+											<div class="ct-widget-icon"><i class="fa fa-clock-o"></i></div>
+											<div class="ct-widget-content">
+												<h4 class="ct-widget-title">LUN - SAM, 8-18h</h4>
+												<p class="ct-widget-description">Heures d'ouvertures</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ct-address--footer"><i class="fa fa-home"></i><span>Nacherwee 12, 9644 Dahl, Luxembourg</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="row ct-u-padding-top-80 ct-u-padding-bottom-75">
+						<div class="col-md-3 col-sm-12">
+							<div class="ct-iconBox ct-iconBox--type4 media ct-iconBox--white">
+								<div class="media-left">
+									<div class="ct-iconBox-icon"><i class="fa fa-envelope-o"></i></div>
+								</div>
+								<div class="media-body">
+									<h6 class="ct-iconBox-title">Contactez-nous</h6>
+									<p class="ct-iconBox-description"></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-9 col-sm-12 ct-u-padding-top-25">
+							<div role="alert" style="display:none" class="successMessage alert alert-success alert-dismissible">Thank you. Your message has been sent correctly.
+								<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x</button>
+							</div>
+							<div role="alert" style="display:none" class="successError alert alert-danger alert-dismissible">Ups! An error occured. Please try again later.
+								<button type="button" data-dismiss="alert" aria-hidden="true" aria-label="Close" class="close">x      </button>
+							</div>
+							<form action="assets/form/send.php" method="POST" data-email-subject="Disrupt" class="ct-contactForm validateIt">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" placeholder="Nom*" id="cf-name" name="field[]" required="required" class="form-control"/>
+											<label for="cf-name" class="sr-only">Nom*</label>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="email" placeholder="Adresse e-mail*" id="cf-email" name="field[]" required="required" class="form-control"/>
+											<label for="cf-email" class="sr-only">Adresse e-mail*</label>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<input type="text" placeholder="N° de téléphone" id="cf-website" name="field[]" class="form-control"/>
+											<label for="cf-website" class="sr-only">N° de téléphone</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input type="tel" placeholder="Marque du véhicule" id="cf-phone" name="field[]" class="form-control"/>
+											<label for="cf-phone" class="sr-only">Marque du véhicule</label>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input type="text" placeholder="Modèle / Motorisation / Année" id="cf-subject" name="field[]" required="required" class="form-control"/>
+											<label for="cf-subject" class="sr-only">Modèle / Motorisation / Année</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<textarea placeholder="Questions / Demande d'informations / Autre*" id="cf-message" rows="1" required="required" class="form-control"></textarea>
+											<div class="ct-contactForm-requiredMessage">* Les champs marqués d'une étoile sont obligatoires</div>
+											<button type="submit" class="btn btn--withIcon">Envoyer<i class="fa fa-caret-right"></i></button>
+											<label for="cf-message" class="sr-only">Questions / Informations / ...*</label>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<?php include(PATH_VIEWS . "footer.php"); ?>
 		</div>
 		<?php include(PATH_VIEWS . "mobileMenu.php"); ?>
-		
 		<!-- JavaScripts-->
 		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>main.js"></script>
@@ -161,6 +164,5 @@
 		<script src="<?php echo PATH_JS; ?>plugins/isotope/init.js"></script>
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
-		
 	</body>
 </html>

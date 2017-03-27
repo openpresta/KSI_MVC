@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Single Product e-Commerce HTML Template">
-		<meta name="author" content="createIT">
+		<meta name="description" content="Les questions les plus fréquentes concernant les boîtiers additionnels et les pedalbox">
+		<meta name="author" content="<?php echo AUTHOR; ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
@@ -51,12 +51,10 @@
 					</div>
 				</div>
 			</div>
-			
 			<section>
-		<?php include(PATH_VIEWS . "footer.php"); ?>
+			<?php include(PATH_VIEWS . "footer.php"); ?>
 		</div>
 		<?php include(PATH_VIEWS . "mobileMenu.php"); ?>
-		
 		<!-- JavaScripts-->
 		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>main.js"></script>
@@ -69,12 +67,10 @@
 		<script src="<?php echo PATH_JS; ?>plugins/isotope/init.js"></script>
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
-		
 		<script>
 			$('document').ready(function(e) {
 			  $('.collapse').collapse({toggle: false});
 			});
 		</script>
-		
 	</body>
 </html>

@@ -80,6 +80,14 @@ class Db {
 		
 	}
 	
+	function getProductDescFromProductID($productID) {
+		$req = $this->_db->prepare('SELECT productDesc FROM tuningbox WHERE productID = ?');
+		$req->execute(array($productID));
+	
+		$retour = $req->fetch();
+		return $retour;
+	}
+	
 	function isValidDescription($description) {
 		
 		$req = $this->_db->prepare('SELECT make FROM tuningbox WHERE productDesc = ?');
@@ -91,6 +99,19 @@ class Db {
 		
 		return false;
 				
+	}
+	
+	function isValidArticleID($articleID) {
+		
+		$req = $this->_db->prepare('SELECT make FROM tuningbox WHERE productID = ?');
+		$req->execute(array($articleID));
+	
+		$retour = $req->fetch();
+		
+		if ($retour != "") return true;
+		
+		return false;
+	
 	}
 
 }

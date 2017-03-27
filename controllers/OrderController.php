@@ -1,24 +1,24 @@
 <?php
 	 
-class VehicleController {
+class OrderController {
 	
 	public function __construct() {
 	
 	}
 			
-	public function run(){			
-			
-		$descriptionUnderlined = $_GET['description'];
+	public function run(){	
 		
-		$descriptionClean = str_replace("+", " ", $descriptionUnderlined);
-		$descriptionClean = str_replace("_", "/", $descriptionClean);
+		$articleID = $_GET['articleID'];
 		
 		$db = Db::getInstance();
-		$isValid = $db->isValidDescription($descriptionClean);
+		
+		$isValid = $db->isValidArticleID($articleID);
 		
 		if ($isValid) {
-				
-			$vehicle = new VehicleModel($descriptionClean);
+
+			$description = $db->getProductDescFromProductID($articleID)->productDesc;
+			
+			$vehicle = new VehicleModel($description);
 			$make = $vehicle->getMake();
 			$model = $vehicle->getModel();
 			$generation = $vehicle->getGeneration();
@@ -34,10 +34,12 @@ class VehicleController {
 			$nmTun = $vehicle->getNmTun();
 			$hpOri = $vehicle->getHpOri();
 			$hpTun = $vehicle->getHpTun();
+			
 			$powerBoxPrice = $vehicle->getPowerBoxPrice();
 			$pedalBoxPrice = $vehicle->getPedalBoxPrice();
 			
-			$bothPrice = ($powerBoxPrice + $pedalBoxPrice)*0.9;
+			$bothPrice = intval(($powerBoxPrice + $pedalBoxPrice)*0.9);
+			$reducPrice = intval(($powerBoxPrice + $pedalBoxPrice)*0.1);
 			
 			$cableSet = $vehicle->getCableSet();
 			
@@ -47,22 +49,11 @@ class VehicleController {
 			$hpProcentOri = $vehicle->getHpProcentOri() - 8;
 			$nmProcentOri = $vehicle->getNmProcentOri() - 8;
 			
-			
-			if ($generation != "") {
-				$modelDetailed = $model . " " . $generation;
-			} else {
-				$modelDetailed = $model;
-			}
-			
-			$make_url = str_replace(" ", "_", $make);
-		
-			require_once(PATH_VIEWS . 'vehicle.php');
-			
-		} else {
-			
-			header("Location: page_introuvable.html");
-						
+			require_once(PATH_VIEWS . 'order.php');
+
 		}
+		
+		header('Location: ' . NOT_FOUND_URL);
 		
 	}
 	

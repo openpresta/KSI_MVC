@@ -126,6 +126,10 @@ body.ct-menu-effect .navbar-beacon li a:hover {
 	transition: opacity 1s linear;
 }
 
+.navbar.navbar-default.navbar-light.navbar-desktop.navbar--animated.navbar-top.animated-init.navbar-fixed {
+	border-bottom: 1px solid #00bcdf;
+}
+
 .btn.btn-xs.btn-transparent.btn--white.btn-separated.blueBackground:hover {
 	background-color: #00bcdf;
 	color: white;
@@ -136,10 +140,78 @@ body.ct-menu-effect .navbar-beacon li a:hover {
 	border-bottom: 2px solid #00bcdf;
 }
 
+.bottomLineBlueTight {
+	border-bottom: 1px solid #00bcdf;
+}
+
 .selectVehicle404noPaddingTop section {
 	padding-top: 30px !important;
 }
 
-#orderButton .btnBlueCustom {
+.btnBlueCustom {
 	background-color: #00bcdf;
+	color:white;
+}
+
+#order .value {
+	color:white;
+	font-size: large;
+	padding: 10px;
+	
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-u-margin-bottom-20.ct-iconBox--variant {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-u-margin-bottom-20.ct-iconBox--variant.selected{
+	border-color: #00bcdf;
+	border-width: 1px;
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-u-margin-bottom-20.ct-iconBox--variant:hover {
+	border: 1px solid #343434;
+	color : #343434;
+	background-color: transparent;
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-u-margin-bottom-20.ct-iconBox--variant.selected:hover {
+	color : #343434;
+	background-color: transparent;
+	border: 1px solid #00bcdf;
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-iconBox--variant:hover .ct-iconBox-icon {
+	color: #343434;
+}
+
+#order .ct-iconBox.ct-iconBox--type5.ct-iconBox--variant.selected .ct-iconBox-icon {
+	color: #00bcdf;
+}
+
+#payment table#total {
+	margin: auto;
+	font-size: medium;
+}
+
+#payment table#total tr td {
+	padding: 15px 110px 15px 20px;
+}
+
+#payment table#total tr td:last-child {
+	padding-right: 20px;
+}
+
+#payment table#total tr td:first-child {
+	border-right: 1px solid #1a1a1a;
+}
+
+#payment table#total tr.topBorder{
+	border-top: 1px solid #1a1a1a;
+}
+
+p.border-top-bottom-color {
+	border-top: 1px solid #00bcdf;
+	border-bottom: 1px solid #00bcdf;
 }

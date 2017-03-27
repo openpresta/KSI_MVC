@@ -7,8 +7,8 @@
 <html class="no-js" lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Single Product e-Commerce HTML Template">
-		<meta name="author" content="createIT">
+		<meta name="description" content="KSI PowerBox : choisissez ce qu'il y a de meilleur pour votre voiture.">
+		<meta name="author" content="<?php echo AUTHOR; ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
@@ -29,9 +29,7 @@
 	<body class="cssAnimate smartphone">
 		<?php require_once(PATH_VIEWS . "loader.php"); ?>
 		<div id="ct-js-wrapper" class="ct-js-wrapper ct-pageWrapper">
-			
 			<?php include(PATH_VIEWS . 'navbar.php'); ?>
-			
 			<div data-items="1" data-dots="true" data-height="100%" data-draggable="true" data-arrows="false" class="ct-js-slick ct-u-displayTable ct-dots--type1 ct-dots--positionBottom">
 				<div data-background="<?php echo PATH_PICS; ?>bmw_x6m_x5m.jpg" class="item text-center">
 					<div class="item-inner">
@@ -39,53 +37,14 @@
 							<img src="<?php echo PATH_PICS; ?>logo_500px.png" style="margin-left: auto; margin-right: auto;" height="100" alt="">
 							<h1 class="ct-pageHeader-title ct-u-color--white">Découvrez le meilleur <span class="ct-u-colorMotive">boîtier additionnel</span> du marché</h1>
 							<div class="btn-group ct-u-margin-top-30">
-								<a href="#next-section-1" data-scroll="#next-section-1" class="btn btn-transparent btn--withIcon btn--motiveColor">Découvrez le KSI PowerBox<i class="fa fa-caret-right"></i></a>
+								<a href="#features" data-scroll="#features" class="btn btn-transparent btn--withIcon btn--motiveColor">Découvrez le KSI PowerBox<i class="fa fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
-			<section id="moreinfo">
-				<div class="ct-gallery--col2">
-					<div class="ct-gallery-item">
-						<figure class="ct-imageBox ct-imageBox--inline ct-imageBox--left">
-							<img src="<?php echo PATH_PICS; ?>more-col.jpg" alt="">
-							<figcaption>
-								<div class="inner">
-									<div class="inner-cell">
-										<div class="ct-imageBox-icon"><i class="fa fa-adn"></i></div>
-									</div>
-									<div class="inner-cell">
-										<div class="ct-imageBox-content">
-											<p>Boîtiers additionnels intelligents et adaptatifs</p>
-											<a href="faq.html" class="btn btn-transparent btn--withIcon btn--motiveColor">KSI PowerBox<i class="fa fa-caret-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
-					<div class="ct-gallery-item">
-						<figure class="ct-imageBox ct-imageBox--inline">
-							<img src="<?php echo PATH_IMAGES; ?>content/smartphone/more-col2.jpg" alt="">
-							<figcaption>
-								<div class="inner">
-									<div class="inner-cell">
-										<div class="ct-imageBox-icon"><i class="fa fa-map-o"></i></div>
-									</div>
-									<div class="inner-cell">
-										<div class="ct-imageBox-content">
-											<p>Optimisation de l'accélérateur</p>
-											<a href="shop-locator.html" class="btn btn-transparent btn--withIcon btn--motiveColor">KSI PedalBox<i class="fa fa-caret-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-			</section>
+			<?php include(PATH_VIEWS . "quickLinks.php"); ?>
 			<section id="features" class="ct-u-padding-top-70 ct-u-padding-bottom-80">
 				<div class="container">
 					<div class="row">
@@ -379,17 +338,11 @@
 					</div>
 				</div>
 			</section>
-			
 			<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
-						
 			<?php include(PATH_VIEWS . "footer.php"); ?>
-			
 		</div>
 		<?php include(PATH_VIEWS . "mobileMenu.php"); ?>
-		
-		
 		<script>
-			
 			// Exemple du DynoGraph avec une Audi A3 2.0TDI 140Ch
 			
 			var hpTun = "177";
@@ -439,10 +392,9 @@
 			    [7000, 187],
 			    [8000, 0]
 			];
-		
+			
 			
 		</script>
-		
 		<!-- JavaScripts-->
 		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>main.js"></script>

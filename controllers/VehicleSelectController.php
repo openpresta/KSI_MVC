@@ -10,7 +10,6 @@ class VehicleSelectController
     
     public function run()
     {
-    	require_once(PATH_MODELS . "Db.php");
     	
     	$make = $_GET['make'];
     	$model = $_GET['model'];

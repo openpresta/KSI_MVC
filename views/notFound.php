@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Single Product e-Commerce HTML Template">
-		<meta name="author" content="createIT">
+		<meta name="description" content="La page que vous cherchez n'existe pas. Trouvez le boîtier additionnel qui vous convient en sélectionnant votre véhicule.">
+		<meta name="author" content="<?php echo AUTHOR; ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
 		<meta name="format-detection" content="telephone=no">
@@ -43,37 +43,33 @@
 				</div>
 			</header>
 			<section class="ct-u-padding-top-70 ct-u-background--motive not_found">
-	        <div id="product" class="container">
-	          <div id="features" class="row">
-	            <div class="col-sm-8 col-sm-offset-2">
-	              <div class="ct-sectionHeader ct-sectionHeader--typeDarken ct-sectionHeader--subtitleItalic text-center ct-u-color--white">
-	                <h3 class="ct-sectionHeader-title">Erreur <span>404</span></h3>
-	                <h4 class="ct-sectionHeader-subtitle ct-u-color--white">La page demandée est introuvable</h4>
-	                <p>Quelques pages qui pourraient vous intéresser...</p>
-	                <a href="index.html" class="btn-group btn-group--separated">
-		                <span class="btn btn-dark btn-lg btn-separated">Boîtier additionnel</span>
-		                <span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-home"></i></span>
-		            </a>
-		            <a href="index.html" class="btn-group btn-group--separated">
-		                <span class="btn btn-dark btn-lg btn-separated">Module accélérateur</span>
-		                <span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-home"></i></span>
-		            </a>
-
-		            <span class="ct-sectionHeader-subtitle ct-u-color--white">ou sélectionnez votre véhicule</span>
-	                
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      	</section>
-	     	
-	     	<div class="selectVehicle404noPaddingTop">   	
-	      	<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
-	     	</div>
-		<?php include(PATH_VIEWS . "footer.php"); ?>
+				<div id="product" class="container">
+					<div id="features" class="row">
+						<div class="col-sm-8 col-sm-offset-2">
+							<div class="ct-sectionHeader ct-sectionHeader--typeDarken ct-sectionHeader--subtitleItalic text-center ct-u-color--white">
+								<h3 class="ct-sectionHeader-title">Erreur <span>404</span></h3>
+								<h4 class="ct-sectionHeader-subtitle ct-u-color--white">La page demandée est introuvable</h4>
+								<p>Quelques pages qui pourraient vous intéresser...</p>
+								<a href="<?php echo POWERBOX_URL; ?>" class="btn-group btn-group--separated">
+								<span class="btn btn-dark btn-lg btn-separated">Boîtier additionnel</span>
+								<span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-home"></i></span>
+								</a>
+								<a href="<?php echo PEDALBOX_URL; ?>" class="btn-group btn-group--separated">
+								<span class="btn btn-dark btn-lg btn-separated">Module accélérateur</span>
+								<span class="btn btn-dark btn-lg btn-separated"><i class="fa fa-home"></i></span>
+								</a>
+								<span class="ct-sectionHeader-subtitle ct-u-color--white">ou sélectionnez votre véhicule</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="selectVehicle404noPaddingTop">   	
+				<?php include(PATH_VIEWS . "vehicleSelect.php"); ?>
+			</div>
+			<?php include(PATH_VIEWS . "footer.php"); ?>
 		</div>
 		<?php include(PATH_VIEWS . "mobileMenu.php"); ?>
-		
 		<!-- JavaScripts-->
 		<script src="<?php echo PATH_JS; ?>disrupt.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>main.js"></script>
@@ -87,6 +83,5 @@
 		<script src="<?php echo PATH_JS; ?>unslider-min.js"></script> 
 		<script src="<?php echo PATH_JS; ?>jquery.jqplot.min.js"></script>
 		<script src="<?php echo PATH_JS; ?>vehicleSelect.js"></script>
-		
 	</body>
 </html>
