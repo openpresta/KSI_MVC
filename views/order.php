@@ -233,7 +233,7 @@
 							<div class="ct-iconBox ct-iconBox--type1 ct-iconBox--variant">
 								<div class="ct-iconBox-icon"><i class="fa fa-car"></i></div>
 								<h6 class="ct-iconBox-title">Votre voiture</h6>
-								<p class="ct-iconBox-description">Audi A6 C7 3.0 TFSI<br>2997cm<sup>3</sup><br>2011 -> 2014</p>
+								<p class="ct-iconBox-description"><?php echo $description; ?><br><?php echo $volume; ?>cm<sup>3</sup><br><?php echo $year; ?></p>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-12">
@@ -247,16 +247,16 @@
 									<td>€ <?php echo $pedalBoxPrice; ?></td>
 								</tr>
 								<tr class="topBorder">
-									<td>Sous-total</td>
-									<td>€ 549</td>
+									<td>Livraison</td>
+									<td>OFFERTE</td>
 								</tr>
 								<tr class="topBorder">
 									<td>TVA 17%</td>
-									<td>€ 53,43</td>
+									<td id="tva">€ <?php echo $bothPriceTVA; ?></td>
 								</tr>
 								<tr class="topBorder">
 									<td>Montant total</td>
-									<td>€ 549</td>
+									<td id="grandtotal">€ <?php echo $bothPrice; ?></td>
 								</tr>
 							</table>
 						</div>

@@ -41,6 +41,8 @@ class OrderController {
 			$bothPrice = intval(($powerBoxPrice + $pedalBoxPrice)*0.9);
 			$reducPrice = intval(($powerBoxPrice + $pedalBoxPrice)*0.1);
 			
+			$bothPriceTVA = round($bothPrice - ($bothPrice / 1.21), 2);
+			
 			$cableSet = $vehicle->getCableSet();
 			
 			$hpDiff = $vehicle->getHpDiff();

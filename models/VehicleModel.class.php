@@ -45,7 +45,12 @@ class VehicleModel {
 		$this->_nmTun = 	$vehicle->nmTun+6;
 		$this->_hpOri = 	$vehicle->hpOri;
 		$this->_hpTun = 	$vehicle->hpTun+6;
-		$this->_powerBoxPrice=intval($vehicle->sbPrice) + 50;
+		$this->_powerBoxPrice=intval($vehicle->sbPrice);
+		
+		if ($this->_powerBoxPrice == 0) $this->_powerBoxPrice = 449;
+		if ($this->_powerBoxPrice >= 699) $this->_powerBoxPrice = 599;
+		
+		
 		$this->_cableSet = 	$vehicle->cableSet;
 		$this->_electronics=$vehicle->electronics;
 
