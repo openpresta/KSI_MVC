@@ -93,7 +93,7 @@
 						</div>
 						<div class="col-md-9 col-sm-12 ct-u-padding-both-40">
 
-								<div class="row">
+								<div class="row text-center">
 									<div class="col-md-7">
 										<p class="value border-top-bottom-color"><?php echo $description; ?></p>
 									</div>
