@@ -50,6 +50,8 @@ class OrderController {
 		
 			$hpProcentOri = $vehicle->getHpProcentOri() - 8;
 			$nmProcentOri = $vehicle->getNmProcentOri() - 8;
+
+            $articlId=$articleID;
 			
 			require_once(PATH_VIEWS . 'order.php');
 

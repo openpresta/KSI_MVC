@@ -261,11 +261,21 @@
 							</table>
 						</div>
 						<div class="col-md-4 col-sm-12">
-							<div class="ct-iconBox ct-iconBox--type1 ct-iconBox--variant">
-								<div class="ct-iconBox-icon"><i class="fa fa-credit-card"></i></div>
-								<h6 class="ct-iconBox-title">Payer</h6>
-								<p class="ct-iconBox-description">Cliquez sur l'icône pour procéder au paiement, les moyens de paiement acceptés sont : Paypal, Visa, Mastercard, ...</p>
-							</div>
+                            <form class="paypal" action="index.php?page=payment" method="post" id="paypal_form" target="_blank">
+                                <input type="hidden" name="cmd" value="_xclick" />
+                                <input type="hidden" name="no_note" value="1" />
+                                <input type="hidden" name="lc" value="UK" />
+                                <input type="hidden" name="currency_code" value="GBP" />
+                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
+                                <input type="hidden" name="item_number" value="<?=$articlId?>" / >
+                                <div class="ct-iconBox ct-iconBox--type1 ct-iconBox--variant">
+                                    <div class="ct-iconBox-icon"><i class="fa fa-credit-card"></i></div>
+                                    <h6 class="ct-iconBox-title">   <input type="submit" name="submit" value="Payer"/></h6>
+                                    <p class="ct-iconBox-description">
+                                        Cliquez sur l'icône pour procéder au paiement, les moyens de paiement acceptés sont : Paypal, Visa, Mastercard, ...</p>
+                                </div>
+                            </form>
+
 						</div>
 					</div>
 				</div>

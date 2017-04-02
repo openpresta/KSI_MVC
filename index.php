@@ -35,6 +35,9 @@
 	define("RESELLER_URL", "revendeur.html");
 	define("ORDER_URL", "commander-");
 	define("NOT_FOUND_URL", "page-introuvable.html");
+
+    // to do httacces
+    define("PAYEMENT_URL", "payement.html");
 	
 	
 	function chargerClasse($classe) {
@@ -91,6 +94,22 @@
 			require_once(PATH_CONTROLLERS . "VehicleSelectController.php");
 			$controller = new VehicleSelectController();
 			break;
+        case 'payment':
+            require_once(PATH_CONTROLLERS . "PayementController.php");
+            if(!empty($_GET['result']) ){
+                if($_GET['result']=='successful'){
+                    require_once(PATH_VIEWS . 'paypal_succes.php');
+                    return;
+                }
+                else {
+                    require_once(PATH_VIEWS . 'cancel_paypal.php');
+                    return ;
+                }
+
+            }
+            else
+                $controller = new PayementController();
+            break;
 			
 	}
 	
