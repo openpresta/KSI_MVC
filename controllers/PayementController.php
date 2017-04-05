@@ -50,8 +50,8 @@ class PayementController {
         // Append amount& currency (£) to quersytring so it cannot be edited in html
 
         //The item name and amount can be brought in dynamically by querying the $_POST['item_number'] variable.
-        $querystring .= "item_name=".urlencode($this->articleInfo->getProductDesc())."&";
-        $querystring .= "amount=".urlencode($this->articleInfo->getPowerBoxPrice())."&";
+        $querystring .= "item_name=".urlencode($_POST["item_description"])."&";
+        $querystring .= "amount=".urlencode($_POST["item_amount"])."&";
 
         //loop for posted values and append to querystring
         foreach($_POST as $key => $value){

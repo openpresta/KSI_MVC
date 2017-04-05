@@ -11,9 +11,9 @@ products.forEach(function(element, index, array) {
 		pedalbox.removeClass("selected");
 		$("#" + element.currentTarget.id).addClass("selected");
 		$("#selectedProduct").val(element.currentTarget.id);
-		
+
 		updateRecap(element.currentTarget.id);
-		
+
 	});
 });
 
@@ -22,6 +22,7 @@ function updateRecap(choice) {
 	showLinesRecap(choice);
 	updateTotal(choice);
 	updateTVA(choice);
+    updatePaypal()
 }
 
 function showLinesRecap(choice) {
@@ -36,7 +37,7 @@ function showLinesRecap(choice) {
 		$("#powerBoxLine").css("display", "none");
 		$("#pedalBoxLine").css("display", "table-row");
 	}
-	
+
 }
 
 function updateTotal(choice) {
@@ -57,4 +58,10 @@ function updateTVA(choice) {
 	} else {
 		$("#tva").text("€ " + (pedalBoxPrice - (pedalBoxPrice/(1.21))).toFixed(2));
 	}
+
+}
+function updatePaypal(choice) {
+        var productSelect=$('#selectedProduct').val();
+        $('#item_description').val($('#'+productSelect).find('.productLabel').text());
+        $('#item_amount').val($('#'+productSelect).find('.priceProd').val());
 }

@@ -114,24 +114,27 @@
 					<h4 class="ct-u-padding-both-40" style="text-align: center; font-weight: 500; padding-top:0px;">Choisissez un PowerBox, un PedalBox ou les deux pour encore plus de sensations.</h4>
 					<div class="row">
 						<div class="col-md-4 col-sm-4">
-							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product selected" id="both">
+							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product selected setProduct" id="both">
 								<div class="ct-iconBox-icon"><i class="fa fa-tachometer"></i> + <i class="fa fa-flash"></i></div>
 								<p class="productLabel">PowerBox et PedalBox</p>
 								<p class="productprice">€ <?php echo $bothPrice; ?></p>
+                                <input type="hidden" class="priceProd" value="<?= $bothPrice; ?>">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
-							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product" id="powerbox">
+							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product setProduct" id="powerbox">
 								<div class="ct-iconBox-icon"><i class="fa fa-tachometer"></i></div>
 								<p class="productLabel">PowerBox</p>
 								<p class="productprice">€ <?php echo $powerBoxPrice; ?></p>
+                                <input type="hidden" class="priceProd" value="<?= $powerBoxPrice; ?>">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
-							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product" id="pedalbox">
+							<div class="ct-iconBox ct-iconBox--type5 ct-u-margin-bottom-20 ct-iconBox--variant product setProduct" id="pedalbox">
 								<div class="ct-iconBox-icon"><i class="fa fa-flash"></i></div>
 								<p class="productLabel">PedalBox</p>
 								<p class="productprice">€ <?php echo $pedalBoxPrice; ?></p>
+                                <input type="hidden" class="priceProd" value="<?= $pedalBoxPrice; ?>">
 							</div>
 						</div>
 						<input type="text" id="selectedProduct" name="selectedProduct" value="both" hidden/>
@@ -268,6 +271,8 @@
                                 <input type="hidden" name="currency_code" value="GBP" />
                                 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
                                 <input type="hidden" name="item_number" value="<?=$articlId?>" / >
+                                <input type="hidden" name="item_description" id="item_description" value="PowerBox et PedalBox" / >
+                                <input type="hidden" name="item_amount" id="item_amount" value="<?=$bothPrice?>" / >
                                 <div class="ct-iconBox ct-iconBox--type1 ct-iconBox--variant">
                                     <div class="ct-iconBox-icon"><i class="fa fa-credit-card"></i></div>
                                     <h6 class="ct-iconBox-title">   <input type="submit" name="submit" value="Payer"/></h6>
