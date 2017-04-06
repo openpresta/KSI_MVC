@@ -267,11 +267,11 @@
                             <form class="paypal" action="index.php?page=payment" method="post" id="paypal_form" target="_blank">
                                 <input type="hidden" name="cmd" value="_xclick" />
                                 <input type="hidden" name="no_note" value="1" />
-                                <input type="hidden" name="lc" value="UK" />
-                                <input type="hidden" name="currency_code" value="GBP" />
+                                <input type="hidden" name="lc" value="USD" />
+                                <input type="hidden" name="currency_code" value="EUR" />
                                 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
                                 <input type="hidden" name="item_number" value="<?=$articlId?>" / >
-                                <input type="hidden" name="item_description" id="item_description" value="PowerBox et PedalBox" / >
+                                <input type="hidden" name="item_description" id="item_description" value="<?=str_replace(' ', '-', 'PowerBox et PedalBox')?>" / >
                                 <input type="hidden" name="item_amount" id="item_amount" value="<?=$bothPrice?>" / >
                                 <div class="ct-iconBox ct-iconBox--type1 ct-iconBox--variant">
                                     <div class="ct-iconBox-icon"><i class="fa fa-credit-card"></i></div>
