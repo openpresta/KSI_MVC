@@ -42,6 +42,7 @@ class PayementController {
      */
     public function paypalRequest(){
 
+
         $querystring = '';
 
         // Firstly Append paypal account to querystring
@@ -64,12 +65,15 @@ class PayementController {
         $querystring .= "cancel_return=".urlencode(stripslashes($this->cancel_url))."&";
         $querystring .= "notify_url=".urlencode($this->notify_url);
 
+
+
         // Append querystring with custom field
         //$querystring .= "&custom=".USERID;
 
         // Redirect to paypal IPN
-        header('location:https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
-        exit();
+        $url = "https://www.sandbox.paypal.com/cgi-bin/webscr".$querystring;
+        header('location: ' . $url);
+        return ;
 
     }
 
@@ -87,6 +91,7 @@ class PayementController {
             $req .= "&$key=$value";
         }
 
+        die('test');
         // assign posted variables to local variables
         $data['item_name']			= $_POST['item_name'];
         $data['item_number'] 		= $_POST['item_number'];
@@ -118,12 +123,12 @@ class PayementController {
                     // mail('user@domain.com', 'PAYPAL POST - VERIFIED RESPONSE', print_r($post, true));
 
                     // Validate payment (Check unique txnid & correct price)
-                    $valid_txnid = check_txnid($data['txn_id']);
-                    $valid_price = check_price($data['payment_amount'], $data['item_number']);
+                    $valid_txnid = $this->check_txnid($data['txn_id']);
+                    $valid_price = $this->check_price($data['payment_amount'], $data['item_number']);
                     // PAYMENT VALIDATED & VERIFIED!
                     if ($valid_txnid && $valid_price) {
 
-                        $orderid = updatePayments($data);
+                        $orderid = $this->updatePayments($data);
 
                         if ($orderid) {
                             // Payment has been made & successfully inserted into the Database
