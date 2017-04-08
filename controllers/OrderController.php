@@ -55,10 +55,9 @@ class OrderController {
 			
 			require_once(PATH_VIEWS . 'order.php');
 
+		} else {
+			header('Location: ' . NOT_FOUND_URL);
 		}
-		
-		header('Location: ' . NOT_FOUND_URL);
-		
 	}
 	
 }
