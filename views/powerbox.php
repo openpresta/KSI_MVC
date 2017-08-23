@@ -197,7 +197,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-5 text-center ct-u-padding-top-50"><img src="<?php echo PATH_PICS; ?>pompe.png" alt="" class="ct-animationFloating--horizontal"></div>
+								<div class="col-md-5 text-center ct-u-padding-top-50"><img src="<?php echo PATH_PICS; ?>pump.png" alt="" class=""></div>
 								<!-- Schéma cables qui se rejoignent avec signe Validé et 15 minutes-->
 							</li>
 							<li class="unslider_element">
