@@ -132,6 +132,24 @@ class PayementController {
 
                         if ($orderid) {
                             // Payment has been made & successfully inserted into the Database
+
+  $paypaldetails = "<b><u>PayPal Response Details:</u></b><br><br>"; 
+ if(is_array($data)) {
+   $paypalinfo = array('tx','txn_id','first_name','last_name','business','payer_email','payer_business_name','item_name','mc_currency','quantity','payment_gross','payment_date','payment_status','st','amt','cc');
+   foreach($data as $key=>$dat){ 
+    if(in_array($key, $paypalinfo)){
+     if($fieldkey == 'payment_status'){
+      $payment_details .= ucwords($key).' - Confirmed'.'<br>';
+     } else {     
+      $paypaldetails .= ucwords($key).' - '.$dat.'<br>';
+     }
+    }     
+   }
+  } else {
+   $paypaldetails .= $payment_details;
+}
+mail($data['payer_email'], 'PAYPAL POST', $paypaldetails );
+
                         } else {
                             // Error inserting into DB
                             // E-mail admin or alert user
